@@ -1,5 +1,4 @@
-﻿using QLMP.Class;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLMP
+namespace demo_login.form
 {
-    public partial class Trangchu : Form
+    public partial class Formhome : Form
     {
-        public Trangchu()
+        public Formhome()
         {
             InitializeComponent();
         }
 
-        private void Trangchu_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            functions.ketnoi();
+
         }
     }
 }

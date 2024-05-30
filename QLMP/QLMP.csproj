@@ -59,11 +59,11 @@
     <Compile Include="Forms\Dangky.Designer.cs">
       <DependentUpon>Dangky.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dangnhap.cs">
+    <Compile Include="Forms\dnhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dangnhap.Designer.cs">
-      <DependentUpon>Dangnhap.cs</DependentUpon>
+    <Compile Include="Forms\dnhap.Designer.cs">
+      <DependentUpon>dnhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Doanhthu.cs">
       <SubType>Form</SubType>
@@ -71,6 +71,13 @@
     <Compile Include="Forms\Doanhthu.Designer.cs">
       <DependentUpon>Doanhthu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Formhome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Formhome.Designer.cs">
+      <DependentUpon>Formhome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Global.cs" />
     <Compile Include="Forms\Hanghoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,11 +96,23 @@
     <Compile Include="Forms\Hoadonnhap.Designer.cs">
       <DependentUpon>Hoadonnhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Khachhang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Khachhang.Designer.cs">
       <DependentUpon>Khachhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Nhacungcap.cs">
       <SubType>Form</SubType>
@@ -113,19 +132,40 @@
     <Compile Include="Forms\Phanloai.Designer.cs">
       <DependentUpon>Phanloai.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Trangchu.cs">
+    <Compile Include="Forms\registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Trangchu.Designer.cs">
-      <DependentUpon>Trangchu.cs</DependentUpon>
+    <Compile Include="Forms\registration.Designer.cs">
+      <DependentUpon>registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\dangky.resx">
+      <DependentUpon>Dangky.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dnhap.resx">
+      <DependentUpon>dnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Formhome.resx">
+      <DependentUpon>Formhome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hanghoa.resx">
+      <DependentUpon>Hanghoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Nhanvien.resx">
       <DependentUpon>Nhanvien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Trangchu.resx">
-      <DependentUpon>Trangchu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\registration.resx">
+      <DependentUpon>registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +175,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,6 +190,31 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\anh.jpg" />
+    <None Include="Resources\tải xuống11.jpg" />
+    <None Include="Resources\tải xuống2.jpg" />
+    <None Include="Resources\nguon1.jpg" />
+    <None Include="Resources\mypham31.jpg" />
+    <None Include="Resources\menu1.jpg" />
+    <None Include="Resources\homem1.png" />
+    <None Include="Resources\home21.jpg" />
+    <None Include="Resources\home11.jpg" />
+    <None Include="Resources\home3.jpg" />
+    <None Include="Resources\avt11.jpg" />
+    <None Include="Resources\avt2.jpg" />
+    <None Include="Resources\anh1.jpg" />
+    <Content Include="Resources\avt.jpg" />
+    <Content Include="Resources\avt1.jpg" />
+    <Content Include="Resources\home.jpg" />
+    <Content Include="Resources\home1.jpg" />
+    <Content Include="Resources\home2.jpg" />
+    <Content Include="Resources\homem.png" />
+    <Content Include="Resources\menu.jpg" />
+    <Content Include="Resources\mypham3.jpg" />
+    <Content Include="Resources\nguon.jpg" />
+    <Content Include="Resources\tải xuống.jpg" />
+    <Content Include="Resources\tải xuống1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLMP.Forms;
+using QLMP.FORMS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace QLMP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Trangchu());
+            Application.Run(new login());
         }
     }
 }
