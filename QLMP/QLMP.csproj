@@ -77,7 +77,6 @@
     <Compile Include="Forms\Formhome.Designer.cs">
       <DependentUpon>Formhome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Global.cs" />
     <Compile Include="Forms\Hanghoa.cs">
       <SubType>Form</SubType>
     </Compile>

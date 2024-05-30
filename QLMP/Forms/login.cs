@@ -27,23 +27,31 @@ namespace QLMP.Forms
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            // Tạo kết nối SQL
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False");
             con.Open();
-            string sql;
-            sql = "SELECT * FROM TaiKhoan WHERE TenTk=@Username AND MatKhau=@Password";
+
+            // Tạo câu lệnh SQL
+            string sql = "SELECT * FROM TaiKhoan WHERE TenTk=@Username AND MatKhau=@Password";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@Username", txt_tk.Text);
             cmd.Parameters.AddWithValue("@Password", txt_mk.Text);
 
-            // lấy bản ghi từ câu lệnh select
+            // Lấy bản ghi từ câu lệnh SELECT
             SqlDataReader dta = cmd.ExecuteReader();
 
-            if (dta.Read() == true)
+            if (dta.Read())
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                // lấy column role từ bảng tài khoản
-                int role = (int)dta["role"];
-                if(role == 0) role = 0;
+
+                // Lấy column role từ bảng Tài Khoản một cách an toàn
+                int role = 0;
+                if (dta["role"] != DBNull.Value)
+                {
+                    role = Convert.ToInt32(dta["role"]);
+                }
+
+                // Khởi tạo Home form với role
                 Home h = new Home(role);
                 h.ShowDialog();
                 this.Hide();
@@ -55,6 +63,10 @@ namespace QLMP.Forms
                 txt_mk.Text = "";
                 txt_tk.Focus();
             }
+
+            // Đóng kết nối SQL
+            dta.Close();
+            con.Close();
 
         }
 
