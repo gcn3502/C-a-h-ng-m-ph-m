@@ -28,8 +28,10 @@ namespace QLMP.Forms
             txttencv.KeyPress += new KeyPressEventHandler(txttencv_KeyPress);
             txtmucluong.KeyPress += new KeyPressEventHandler(txtmucluong_KeyPress);
             txtmucluong.TextChanged += new EventHandler(txtmucluong_TextChanged);
-            btntimkiem.Enter += new EventHandler(btntimkiem_Enter);
-            btntimkiem.Leave += new EventHandler(btntimkiem_Leave);
+            //btntimkiem.Enter += new EventHandler(btntimkiem_Enter);
+            //btntimkiem.Leave += new EventHandler(btntimkiem_Leave);
+            txttimkiem.Enter += new EventHandler(txttimkiem_Enter);
+            txttimkiem.Leave += new EventHandler(txttimkiem_Leave);
 
             txtmacv.Enabled = false;
             //txttencv.Enabled = false;
@@ -98,7 +100,6 @@ namespace QLMP.Forms
             //    txtmucluong.Focus();
             //    return;
             //}
-
             txtmacv.Text = dgridcongviec.CurrentRow.Cells["MaCV"].Value.ToString();
             txttencv.Text = dgridcongviec.CurrentRow.Cells["TenCV"].Value.ToString();
             txtmucluong.Text = dgridcongviec.CurrentRow.Cells["MucLuong"].Value.ToString();
@@ -161,7 +162,7 @@ namespace QLMP.Forms
             //    return;
             //}
 
-            sql = "UPDATE CongViec SET TenCV=N'" + txttencv.Text.Trim() + "',MucLuong=N'" + txtmucluong.Text.Trim() + "',MoTa=N'" + txtmota.Text.Trim() + "' WHERE MaCV =N'" + txtmacv.Text + "'";
+            sql = "UPDATE CongViec SET TenCV=N'" + txttencv.Text.Trim() + "',MucLuong=N'" + txtmucluong.Text.Trim() + "',MoTa=N'" + txtmota.Text.Trim() + "' WHERE MaCV=N'" + txtmacv.Text + "'";
 
             function.RunSql(sql);
             load_datagrid();
@@ -327,7 +328,7 @@ namespace QLMP.Forms
             dgridcongviec.Columns[3].Width = 162;
         }
 
-        private void btntimkiem_Enter(object sender, EventArgs e)
+        private void txttimkiem_Enter(object sender, EventArgs e)
         {
             if (txttimkiem.Text == "Nhập từ khóa tìm kiếm.....")
             {
@@ -336,7 +337,7 @@ namespace QLMP.Forms
             }
         }
 
-        private void btntimkiem_Leave(object sender, EventArgs e)
+        private void txttimkiem_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txttimkiem.Text))
             {
@@ -389,7 +390,5 @@ namespace QLMP.Forms
             MessageBox.Show("Bạn có chắc chắn muốn thoát không???", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             Application.Exit();
         }
-
-        
     }
 }

@@ -24,6 +24,10 @@ namespace QLMP.Forms
             txttimkiem.Text = "Nhập từ khóa tìm kiếm";
             txttimkiem.ForeColor = System.Drawing.Color.Gray;
             txttenloai.KeyPress += new KeyPressEventHandler(txttenloai_KeyPress);
+            txttimkiem.Enter += new EventHandler(txttimkiem_Enter);
+            txttimkiem.Leave += new EventHandler(txttimkiem_Leave);
+            txttimkiem.MouseEnter += new EventHandler(txttimkiem_MouseEnter);
+            txttimkiem.MouseLeave += new EventHandler(txttimkiem_MouseLeave);
             function.Connect();
             txtmaloai.Enabled = false;
             btnluu.Enabled = false;
@@ -153,7 +157,6 @@ namespace QLMP.Forms
             function.RunSql(sql);
             load_datagrid();
             ResetValues();
-
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -216,24 +219,7 @@ namespace QLMP.Forms
                 SendKeys.Send("{TAB}");
         }
 
-        private void btntimkiem_Enter(object sender, EventArgs e)
-        {
 
-            if (txttimkiem.Text == "Nhập từ khóa tìm kiếm.....")
-            {
-                txttimkiem.Text = "";
-                txttimkiem.ForeColor = System.Drawing.Color.Black;
-            }
-        }
-
-        private void btntimkiem_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txttimkiem.Text))
-            {
-                txttimkiem.Text = "Nhập từ khóa tìm kiếm.....";
-                txttimkiem.ForeColor = System.Drawing.Color.Gray;
-            }
-        }
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
@@ -264,6 +250,34 @@ namespace QLMP.Forms
             dgridphanloai.Columns[1].Width = 325;
         }
 
+        private void txttimkiem_Enter(object sender, EventArgs e)
+        {
+            if (txttimkiem.Text == "Nhập từ khóa tìm kiếm.....")
+            {
+                txttimkiem.Text = "";
+                txttimkiem.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void txttimkiem_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txttimkiem.Text))
+            {
+                txttimkiem.Text = "Nhập từ khóa tìm kiếm.....";
+                txttimkiem.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void txttenloai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra xem ký tự có phải là chữ cái không (bao gồm cả chữ hoa và chữ thường)
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Hủy bỏ ký tự không hợp lệ
+                e.Handled = true;
+            }
+        }
+
         private void txttimkiem_MouseEnter(object sender, EventArgs e)
         {
             if (txttimkiem.Text == "Nhập từ khóa tìm kiếm.....")
@@ -282,21 +296,11 @@ namespace QLMP.Forms
             }
         }
 
-        private void txttenloai_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Kiểm tra xem ký tự có phải là chữ cái không (bao gồm cả chữ hoa và chữ thường)
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                // Hủy bỏ ký tự không hợp lệ
-                e.Handled = true;
-            }
-        }
         private void btnđong_Click(object sender, EventArgs e)
         {
+
             MessageBox.Show("Bạn có chắc chắn muốn thoát không???", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             Application.Exit();
         }
-
-       
     }
 }

@@ -55,6 +55,11 @@
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(511, 22);
             this.txttimkiem.TabIndex = 17;
+            this.txttimkiem.Enter += new System.EventHandler(this.txttimkiem_Enter);
+            this.txttimkiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyUp);
+            this.txttimkiem.Leave += new System.EventHandler(this.txttimkiem_Leave);
+            this.txttimkiem.MouseEnter += new System.EventHandler(this.txttimkiem_MouseEnter);
+            this.txttimkiem.MouseLeave += new System.EventHandler(this.txttimkiem_MouseLeave);
             // 
             // btntimkiem
             // 
@@ -67,6 +72,7 @@
             this.btntimkiem.TabIndex = 20;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = false;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // btnđong
             // 
@@ -79,6 +85,7 @@
             this.btnđong.TabIndex = 19;
             this.btnđong.Text = "Đóng";
             this.btnđong.UseVisualStyleBackColor = false;
+            this.btnđong.Click += new System.EventHandler(this.btnđong_Click);
             // 
             // btnhuy
             // 
@@ -91,6 +98,7 @@
             this.btnhuy.TabIndex = 18;
             this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = false;
+            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
             // 
             // btnluu
             // 
@@ -103,6 +111,7 @@
             this.btnluu.TabIndex = 16;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = false;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
             // btnxoa
             // 
@@ -115,6 +124,7 @@
             this.btnxoa.TabIndex = 15;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnsua
             // 
@@ -127,6 +137,7 @@
             this.btnsua.TabIndex = 14;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = false;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnthem
             // 
@@ -139,6 +150,7 @@
             this.btnthem.TabIndex = 13;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = false;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // groupBox2
             // 
@@ -161,6 +173,7 @@
             this.dgridphanloai.RowTemplate.Height = 24;
             this.dgridphanloai.Size = new System.Drawing.Size(961, 132);
             this.dgridphanloai.TabIndex = 0;
+            this.dgridphanloai.Click += new System.EventHandler(this.dgridphanloai_Click);
             // 
             // groupBox1
             // 
@@ -182,6 +195,8 @@
             this.txttenloai.Name = "txttenloai";
             this.txttenloai.Size = new System.Drawing.Size(203, 27);
             this.txttenloai.TabIndex = 6;
+            this.txttenloai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttenloai_KeyPress);
+            this.txttenloai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txttenloai_KeyUp);
             // 
             // txtmaloai
             // 
@@ -189,6 +204,7 @@
             this.txtmaloai.Name = "txtmaloai";
             this.txtmaloai.Size = new System.Drawing.Size(203, 27);
             this.txtmaloai.TabIndex = 5;
+            this.txtmaloai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtmaloai_KeyUp);
             // 
             // label2
             // 

@@ -59,6 +59,9 @@
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(511, 22);
             this.txttimkiem.TabIndex = 19;
+            this.txttimkiem.Enter += new System.EventHandler(this.txttimkiem_Enter);
+            this.txttimkiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyUp);
+            this.txttimkiem.Leave += new System.EventHandler(this.txttimkiem_Leave);
             // 
             // btnđong
             // 
@@ -71,6 +74,7 @@
             this.btnđong.TabIndex = 25;
             this.btnđong.Text = "Đóng";
             this.btnđong.UseVisualStyleBackColor = false;
+            this.btnđong.Click += new System.EventHandler(this.btnđong_Click);
             // 
             // btntimkiem
             // 
@@ -83,6 +87,7 @@
             this.btntimkiem.TabIndex = 21;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = false;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // btnhuy
             // 
@@ -95,6 +100,7 @@
             this.btnhuy.TabIndex = 24;
             this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = false;
+            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
             // 
             // btnluu
             // 
@@ -107,6 +113,7 @@
             this.btnluu.TabIndex = 23;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = false;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
             // btnxoa
             // 
@@ -119,6 +126,7 @@
             this.btnxoa.TabIndex = 22;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnsua
             // 
@@ -131,6 +139,7 @@
             this.btnsua.TabIndex = 20;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = false;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnthem
             // 
@@ -143,6 +152,7 @@
             this.btnthem.TabIndex = 18;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = false;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // groupBox2
             // 
@@ -165,6 +175,7 @@
             this.dgridcongviec.RowTemplate.Height = 24;
             this.dgridcongviec.Size = new System.Drawing.Size(1018, 160);
             this.dgridcongviec.TabIndex = 0;
+            this.dgridcongviec.Click += new System.EventHandler(this.dgridcongviec_Click);
             // 
             // groupBox1
             // 
@@ -190,6 +201,7 @@
             this.txtmota.Name = "txtmota";
             this.txtmota.Size = new System.Drawing.Size(197, 27);
             this.txtmota.TabIndex = 8;
+            this.txtmota.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtmota_KeyUp);
             // 
             // txtmucluong
             // 
@@ -197,6 +209,9 @@
             this.txtmucluong.Name = "txtmucluong";
             this.txtmucluong.Size = new System.Drawing.Size(197, 27);
             this.txtmucluong.TabIndex = 7;
+            this.txtmucluong.TextChanged += new System.EventHandler(this.txtmucluong_TextChanged);
+            this.txtmucluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmucluong_KeyPress);
+            this.txtmucluong.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtmucluong_KeyUp);
             // 
             // label5
             // 
@@ -222,6 +237,8 @@
             this.txttencv.Name = "txttencv";
             this.txttencv.Size = new System.Drawing.Size(181, 27);
             this.txttencv.TabIndex = 4;
+            this.txttencv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttencv_KeyPress);
+            this.txttencv.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txttencv_KeyUp);
             // 
             // txtmacv
             // 
@@ -229,6 +246,7 @@
             this.txtmacv.Name = "txtmacv";
             this.txtmacv.Size = new System.Drawing.Size(181, 27);
             this.txtmacv.TabIndex = 3;
+            this.txtmacv.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtmacv_KeyUp);
             // 
             // label3
             // 
