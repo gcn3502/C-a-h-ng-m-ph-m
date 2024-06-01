@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLMP.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace QLMP.Forms
 
         private void Congviec_Load(object sender, EventArgs e)
         {
+            function.Connect();
             txttimkiem.Text = "Nhập từ khóa tìm kiếm";
             txttimkiem.ForeColor = System.Drawing.Color.Gray;
             txttencv.KeyPress += new KeyPressEventHandler(txttencv_KeyPress);
@@ -29,7 +31,6 @@ namespace QLMP.Forms
             btntimkiem.Enter += new EventHandler(btntimkiem_Enter);
             btntimkiem.Leave += new EventHandler(btntimkiem_Leave);
 
-            function.Connect();
             txtmacv.Enabled = false;
             //txttencv.Enabled = false;
             //txtmota.Enabled = false;
@@ -54,7 +55,7 @@ namespace QLMP.Forms
         {
             string sql;
             sql = "SELECT * FROM CongViec";
-            tblcv = functions.GetDataToTable(sql);
+            tblcv = function.GetDataToTable(sql);
             dgridcongviec.DataSource = tblcv;
             dgridcongviec.Columns[0].HeaderText = "Mã công việc ";
             dgridcongviec.Columns[1].HeaderText = "Tên công việc ";
@@ -114,7 +115,7 @@ namespace QLMP.Forms
         {
             string sql;
             sql = "INSERT INTO CongViec(MaCV, TenCV, MucLuong, MoTa) VALUES(null,-1,-1,-1)";
-            functions.RunSql(sql);
+            function.RunSql(sql);
 
             btnluu.Enabled = true;
             btnthem.Enabled = false;
@@ -125,7 +126,7 @@ namespace QLMP.Forms
             ResetValues();
             txtmacv.Focus();
             string sqlcheck = "SELECT TOP 1 MaCV FROM CongViec ORDER BY MaCV DESC";
-            DataTable dt = functions.GetDataToTable(sqlcheck);
+            DataTable dt = function.GetDataToTable(sqlcheck);
             string macv = "";
 
             if (dt != null)
@@ -162,7 +163,7 @@ namespace QLMP.Forms
 
             sql = "UPDATE CongViec SET TenCV=N'" + txttencv.Text.Trim() + "',MucLuong=N'" + txtmucluong.Text.Trim() + "',MoTa=N'" + txtmota.Text.Trim() + "' WHERE MaCV =N'" + txtmacv.Text + "'";
 
-            functions.RunSql(sql);
+            function.RunSql(sql);
             load_datagrid();
             ResetValues();
             btnxoa.Enabled = true;
@@ -210,7 +211,7 @@ namespace QLMP.Forms
             //}
 
             sql = "UPDATE CongViec SET TenCV=N'" + txttencv.Text.Trim().ToString() + "',MucLuong=N'" + txtmucluong.Text.Trim().ToString() + "',MoTa=N'" + txtmota.Text.Trim().ToString() + "' WHERE MaCV=N'" + txtmacv.Text + "'";
-            functions.RunSql(sql);
+            function.RunSql(sql);
             load_datagrid();
             ResetValues();
             btnhuy.Enabled = false;
@@ -246,7 +247,7 @@ namespace QLMP.Forms
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 sql = "DELETE FROM CongViec WHERE MaCV=N'" + txtmacv.Text.Trim() + "'";
-                functions.RunSql(sql);
+                function.RunSql(sql);
                 load_datagrid();
                 ResetValues();
             }
@@ -310,7 +311,7 @@ namespace QLMP.Forms
                 sql += " AND (TenCV LIKE N'%" + txttimkiem.Text.Trim() + "%' OR MaCV LIKE N'%" + txttimkiem.Text.Trim() + "%')";
             }
 
-            tblcv = functions.GetDataToTable(sql);
+            tblcv = function.GetDataToTable(sql);
             if (tblcv.Rows.Count == 0)
                 MessageBox.Show("Không có bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -342,12 +343,6 @@ namespace QLMP.Forms
                 txttimkiem.Text = "Nhập từ khóa tìm kiếm.....";
                 txttimkiem.ForeColor = System.Drawing.Color.Gray;
             }
-        }
-
-        private void btnđong_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Bạn có chắc chắn muốn thoát không???", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            Application.Exit();
         }
 
         private void txttencv_KeyPress(object sender, KeyPressEventArgs e)
@@ -388,5 +383,13 @@ namespace QLMP.Forms
                 e.Handled = true;
             }
         }
+
+        private void btnđong_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bạn có chắc chắn muốn thoát không???", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Application.Exit();
+        }
+
+        
     }
 }

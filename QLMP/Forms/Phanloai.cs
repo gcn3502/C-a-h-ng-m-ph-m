@@ -264,12 +264,6 @@ namespace QLMP.Forms
             dgridphanloai.Columns[1].Width = 325;
         }
 
-        private void btnđong_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Bạn có chắc chắn muốn thoát không???", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            Application.Exit();
-        }
-
         private void txttimkiem_MouseEnter(object sender, EventArgs e)
         {
             if (txttimkiem.Text == "Nhập từ khóa tìm kiếm.....")
@@ -297,5 +291,12 @@ namespace QLMP.Forms
                 e.Handled = true;
             }
         }
+        private void btnđong_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bạn có chắc chắn muốn thoát không???", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Application.Exit();
+        }
+
+       
     }
 }

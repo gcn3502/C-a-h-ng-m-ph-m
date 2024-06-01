@@ -142,6 +142,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Congviec.resx">
+      <DependentUpon>Congviec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\dangky.resx">
       <DependentUpon>Dangky.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Nhanvien.resx">
       <DependentUpon>Nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Phanloai.resx">
+      <DependentUpon>Phanloai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
