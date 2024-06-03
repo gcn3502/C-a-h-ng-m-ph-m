@@ -18,7 +18,7 @@ namespace QLMP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hanghoa());
+            Application.Run(new frmHoaDonNhap());
         }
     }
 }
