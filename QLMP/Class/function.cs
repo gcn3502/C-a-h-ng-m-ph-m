@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 namespace QLMP.Class
 {
-
     internal class function
     {
         public static SqlConnection Conn;  //Khai báo đối tượng kết nối

@@ -582,8 +582,24 @@ namespace QLMP.Forms
 
         private void txt_dgnhap_KeyUp(object sender, KeyEventArgs e)
         {
+            // tính giá bán là 110% giá nhập rồi hiển thị lên txt_dgban
             if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_dgnhap.Text == "")
+                {
+                    MessageBox.Show("Bạn phải nhập giá nhập", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    txt_dgnhap.Focus();
+                    return;
+                }
+                else
+                {
+                    double gianhap, giaban;
+                    gianhap = Convert.ToDouble(txt_dgnhap.Text);
+                    giaban = gianhap * 1.1;
+                    txt_dgban.Text = giaban.ToString();
+                }
                 SendKeys.Send("{TAB}");
+            }
         }
 
         private void txt_dgban_KeyUp(object sender, KeyEventArgs e)

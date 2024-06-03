@@ -108,13 +108,36 @@ namespace QLMP.Forms
 
             else
             {
-                SqlConnection con = new SqlConnection("Data Source=LAPTOP-59G1UB6L\\LANANH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False");
+                SqlConnection con = new SqlConnection("Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False");
                 con.Open();
+
+                //check tk đã tồn tại chưa
+                string sql2 = "SELECT COUNT(*) FROM TaiKhoan WHERE TenTK=@Username";
+                SqlCommand cmd2 = new SqlCommand(sql2, con);
+                cmd2.Parameters.AddWithValue("@Username", txt_tk.Text);
+                int count1 = (int)cmd2.ExecuteScalar();
+                if (count1 > 0)
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    txt_tk.Text = "";
+                    txt_tk.Focus();
+                    return;
+                }
+
+                // hiển thị MessageBox
+                
+
+                // lấy số lượng bản ghi từ bảng Tài Khoản và gán vào biến count
+                string sql1 = "SELECT COUNT(*) FROM TaiKhoan";
+                SqlCommand cmd1 = new SqlCommand(sql1, con);
+                int count = (int)cmd1.ExecuteScalar();
+
                 string sql;
-                sql = "INSERT INTO TaiKhoan (TaiKhoan,MatKhau) VALUES(@Username,@Password)";
+                sql = "INSERT INTO TaiKhoan (MaTK,TenTK,MatKhau) VALUES(@MATK,@Username,@Password)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@Username", txt_tk.Text);
                 cmd.Parameters.AddWithValue("@Password", txt_mk.Text);
+                cmd.Parameters.AddWithValue("@MATK", count + 1);
            //     cmd.Parameters.AddWithValue("@Email", txt_email.Text);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
