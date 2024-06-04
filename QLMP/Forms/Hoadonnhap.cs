@@ -41,6 +41,11 @@ namespace QLMP.Forms
             txtchietkhau.Text = "0";
             txttongtien.Text = "0";
 
+            cbomanhanvien.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbomancc.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbomahang.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbomahd.DropDownStyle = ComboBoxStyle.DropDownList;
+
             function.Fillcombo("SELECT MaNCC, TenNCC FROM NhaCungCap", cbomancc, "MaNCC", "MaNCC");
             cbomancc.SelectedIndex = -1;
             function.Fillcombo("SELECT MaNV, TenNV FROM NhanVien", cbomanhanvien, "MaNV", "MaNV");
@@ -73,14 +78,15 @@ namespace QLMP.Forms
             dgridHDNhap.Columns[3].HeaderText = "Đơn giá";
             dgridHDNhap.Columns[4].HeaderText = "Chiết khấu %";
             dgridHDNhap.Columns[5].HeaderText = "Thành tiền";
-            dgridHDNhap.Columns[0].Width = 80;
-            dgridHDNhap.Columns[1].Width = 180;
-            dgridHDNhap.Columns[2].Width = 100;
-            dgridHDNhap.Columns[3].Width = 90;
-            dgridHDNhap.Columns[4].Width = 120;
+            dgridHDNhap.Columns[0].Width = 90;
+            dgridHDNhap.Columns[1].Width = 200;
+            dgridHDNhap.Columns[2].Width = 90;
+            dgridHDNhap.Columns[3].Width = 120;
+            dgridHDNhap.Columns[4].Width = 100;
             dgridHDNhap.Columns[5].Width = 150;
             dgridHDNhap.AllowUserToAddRows = false;
             dgridHDNhap.EditMode = DataGridViewEditMode.EditProgrammatically;
+            btnsua.Enabled = true;
         }
 
         private void LoadInfoHD()
@@ -321,6 +327,17 @@ namespace QLMP.Forms
 
         private void txtchietkhau_TextChanged(object sender, EventArgs e)
         {
+            if (!(txtchietkhau.Text.Trim().Length == 0) && txtchietkhau.Text != ".")
+            {
+                // Kiểm tra nếu giá trị trong khoảng 0-99
+                double chietkhau = Convert.ToDouble(txtchietkhau.Text);
+                if (chietkhau < 0 || chietkhau > 99)
+                {
+                    MessageBox.Show("Bạn phải nhập chiết khấu trong khoảng từ 0-99", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtchietkhau.Text = "";
+                    txtchietkhau.Focus();
+                }
+            }
             double tt, dg, ck;
             int sl;
             if (txtsoluong.Text == "")
@@ -474,12 +491,13 @@ namespace QLMP.Forms
                 txttongtien.Text = tongmoi.ToString();
                 lblbangchu.Text = "Bằng chữ: " + function.Chuyensangchuoi(double.Parse(tongmoi.ToString()));
                 LoadDataGridView();
+                ResetValuesHang();
             }
         }
 
         private void txtchietkhau_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) ||(Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 46))
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) ||(Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13)|| (Convert.ToInt32(e.KeyChar) == 46))
             {
                 if ((Convert.ToInt32(e.KeyChar) == 46) && (sender as TextBox).Text.IndexOf('.') > -1)
                 {
@@ -498,17 +516,18 @@ namespace QLMP.Forms
         }
         private void txtdongia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8)|| (Convert.ToInt32(e.KeyChar) == 13))
                 e.Handled = false;
             else
             {
                 e.Handled = true;
                 MessageBox.Show("Bạn chỉ được nhập số nguyên dương", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
         }
         private void txtsoluong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13))
                 e.Handled = false;
             else
             {
@@ -741,6 +760,5 @@ namespace QLMP.Forms
                 this.Close();
             }
         }
-
     }
 }

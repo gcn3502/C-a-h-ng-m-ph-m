@@ -34,6 +34,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgridtimkiem = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtmanhanvien = new System.Windows.Forms.TextBox();
+            this.txtncc = new System.Windows.Forms.TextBox();
+            this.txtthang = new System.Windows.Forms.TextBox();
+            this.txtnam = new System.Windows.Forms.TextBox();
+            this.txtngay = new System.Windows.Forms.TextBox();
+            this.lblthang = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblngay = new System.Windows.Forms.Label();
             this.txttongtien = new System.Windows.Forms.TextBox();
             this.txtsohd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,14 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblngay = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblthang = new System.Windows.Forms.Label();
-            this.txtngay = new System.Windows.Forms.TextBox();
-            this.txtnam = new System.Windows.Forms.TextBox();
-            this.txtthang = new System.Windows.Forms.TextBox();
-            this.txtncc = new System.Windows.Forms.TextBox();
-            this.txtmanhanvien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridtimkiem)).BeginInit();
@@ -145,6 +145,90 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
             // 
+            // txtmanhanvien
+            // 
+            this.txtmanhanvien.Location = new System.Drawing.Point(282, 252);
+            this.txtmanhanvien.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmanhanvien.Multiline = true;
+            this.txtmanhanvien.Name = "txtmanhanvien";
+            this.txtmanhanvien.Size = new System.Drawing.Size(297, 37);
+            this.txtmanhanvien.TabIndex = 28;
+            // 
+            // txtncc
+            // 
+            this.txtncc.Location = new System.Drawing.Point(1197, 80);
+            this.txtncc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtncc.Multiline = true;
+            this.txtncc.Name = "txtncc";
+            this.txtncc.Size = new System.Drawing.Size(297, 37);
+            this.txtncc.TabIndex = 27;
+            // 
+            // txtthang
+            // 
+            this.txtthang.Location = new System.Drawing.Point(502, 152);
+            this.txtthang.Margin = new System.Windows.Forms.Padding(4);
+            this.txtthang.Multiline = true;
+            this.txtthang.Name = "txtthang";
+            this.txtthang.Size = new System.Drawing.Size(61, 37);
+            this.txtthang.TabIndex = 26;
+            this.txtthang.TextChanged += new System.EventHandler(this.txtthang_TextChanged);
+            this.txtthang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtthang_KeyPress);
+            // 
+            // txtnam
+            // 
+            this.txtnam.Location = new System.Drawing.Point(704, 152);
+            this.txtnam.Margin = new System.Windows.Forms.Padding(4);
+            this.txtnam.Multiline = true;
+            this.txtnam.Name = "txtnam";
+            this.txtnam.Size = new System.Drawing.Size(100, 37);
+            this.txtnam.TabIndex = 25;
+            this.txtnam.TextChanged += new System.EventHandler(this.txtnam_TextChanged);
+            this.txtnam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnam_KeyPress);
+            // 
+            // txtngay
+            // 
+            this.txtngay.Location = new System.Drawing.Point(282, 152);
+            this.txtngay.Margin = new System.Windows.Forms.Padding(4);
+            this.txtngay.Multiline = true;
+            this.txtngay.Name = "txtngay";
+            this.txtngay.Size = new System.Drawing.Size(58, 37);
+            this.txtngay.TabIndex = 24;
+            this.txtngay.TextChanged += new System.EventHandler(this.txtngay_TextChanged);
+            this.txtngay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtngay_KeyPress);
+            // 
+            // lblthang
+            // 
+            this.lblthang.AutoSize = true;
+            this.lblthang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblthang.Location = new System.Drawing.Point(400, 156);
+            this.lblthang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblthang.Name = "lblthang";
+            this.lblthang.Size = new System.Drawing.Size(84, 33);
+            this.lblthang.TabIndex = 21;
+            this.lblthang.Text = "Tháng";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(619, 158);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 33);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Năm";
+            // 
+            // lblngay
+            // 
+            this.lblngay.AutoSize = true;
+            this.lblngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblngay.Location = new System.Drawing.Point(73, 156);
+            this.lblngay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblngay.Name = "lblngay";
+            this.lblngay.Size = new System.Drawing.Size(73, 33);
+            this.lblngay.TabIndex = 19;
+            this.lblngay.Text = "Ngày";
+            // 
             // txttongtien
             // 
             this.txttongtien.Location = new System.Drawing.Point(1197, 256);
@@ -218,84 +302,6 @@
             this.label1.Size = new System.Drawing.Size(762, 63);
             this.label1.TabIndex = 6;
             this.label1.Text = "TÌM KIẾM HÓA ĐƠN NHẬP";
-            // 
-            // lblngay
-            // 
-            this.lblngay.AutoSize = true;
-            this.lblngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblngay.Location = new System.Drawing.Point(73, 156);
-            this.lblngay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblngay.Name = "lblngay";
-            this.lblngay.Size = new System.Drawing.Size(73, 33);
-            this.lblngay.TabIndex = 19;
-            this.lblngay.Text = "Ngày";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(619, 158);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 33);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Năm";
-            // 
-            // lblthang
-            // 
-            this.lblthang.AutoSize = true;
-            this.lblthang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblthang.Location = new System.Drawing.Point(400, 156);
-            this.lblthang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblthang.Name = "lblthang";
-            this.lblthang.Size = new System.Drawing.Size(84, 33);
-            this.lblthang.TabIndex = 21;
-            this.lblthang.Text = "Tháng";
-            // 
-            // txtngay
-            // 
-            this.txtngay.Location = new System.Drawing.Point(282, 152);
-            this.txtngay.Margin = new System.Windows.Forms.Padding(4);
-            this.txtngay.Multiline = true;
-            this.txtngay.Name = "txtngay";
-            this.txtngay.Size = new System.Drawing.Size(58, 37);
-            this.txtngay.TabIndex = 24;
-            // 
-            // txtnam
-            // 
-            this.txtnam.Location = new System.Drawing.Point(704, 152);
-            this.txtnam.Margin = new System.Windows.Forms.Padding(4);
-            this.txtnam.Multiline = true;
-            this.txtnam.Name = "txtnam";
-            this.txtnam.Size = new System.Drawing.Size(100, 37);
-            this.txtnam.TabIndex = 25;
-            // 
-            // txtthang
-            // 
-            this.txtthang.Location = new System.Drawing.Point(502, 152);
-            this.txtthang.Margin = new System.Windows.Forms.Padding(4);
-            this.txtthang.Multiline = true;
-            this.txtthang.Name = "txtthang";
-            this.txtthang.Size = new System.Drawing.Size(61, 37);
-            this.txtthang.TabIndex = 26;
-            // 
-            // txtncc
-            // 
-            this.txtncc.Location = new System.Drawing.Point(1197, 80);
-            this.txtncc.Margin = new System.Windows.Forms.Padding(4);
-            this.txtncc.Multiline = true;
-            this.txtncc.Name = "txtncc";
-            this.txtncc.Size = new System.Drawing.Size(297, 37);
-            this.txtncc.TabIndex = 27;
-            // 
-            // txtmanhanvien
-            // 
-            this.txtmanhanvien.Location = new System.Drawing.Point(282, 252);
-            this.txtmanhanvien.Margin = new System.Windows.Forms.Padding(4);
-            this.txtmanhanvien.Multiline = true;
-            this.txtmanhanvien.Name = "txtmanhanvien";
-            this.txtmanhanvien.Size = new System.Drawing.Size(297, 37);
-            this.txtmanhanvien.TabIndex = 28;
             // 
             // label3
             // 

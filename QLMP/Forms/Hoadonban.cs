@@ -725,8 +725,8 @@ namespace QLMP.Forms
             string mahd = cbomahoadon.Text;
 
 
-            TimkiemHD timkiemHDForm = new TimkiemHD(mahd);
-            timkiemHDForm.Show(); 
+            //TimkiemHD timkiemHDForm = new TimkiemHD(mahd);
+            //timkiemHDForm.Show(); 
             this.Hide();
         }
 
