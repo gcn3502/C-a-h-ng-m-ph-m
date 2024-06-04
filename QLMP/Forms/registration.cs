@@ -108,7 +108,7 @@ namespace QLMP.Forms
 
             else
             {
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False");
+                SqlConnection con = new SqlConnection("Data Source=LAPTOP-59G1UB6L\\LANANH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False");
                 con.Open();
 
                 //check tk đã tồn tại chưa
