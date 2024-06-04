@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_khoiluong = new System.Windows.Forms.TextBox();
             this.lb_kl = new System.Windows.Forms.Label();
+            this.pic = new System.Windows.Forms.PictureBox();
             this.txt_ghichu = new System.Windows.Forms.TextBox();
             this.combo_maloai = new System.Windows.Forms.ComboBox();
             this.btn_open = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.toolTip13 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip14 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_sx = new System.Windows.Forms.Button();
-            this.pic = new System.Windows.Forms.PictureBox();
             this.btn_dong = new System.Windows.Forms.Button();
             this.btn_boqua = new System.Windows.Forms.Button();
             this.btn_tk = new System.Windows.Forms.Button();
@@ -84,9 +84,9 @@
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_hanghoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_danhmuc
@@ -223,6 +223,15 @@
             this.lb_kl.Size = new System.Drawing.Size(91, 19);
             this.lb_kl.TabIndex = 83;
             this.lb_kl.Text = "Khối lượng:";
+            // 
+            // pic
+            // 
+            this.pic.Location = new System.Drawing.Point(805, 27);
+            this.pic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic.Name = "pic";
+            this.pic.Size = new System.Drawing.Size(196, 176);
+            this.pic.TabIndex = 82;
+            this.pic.TabStop = false;
             // 
             // txt_ghichu
             // 
@@ -481,15 +490,6 @@
             this.btn_sx.UseVisualStyleBackColor = false;
             this.btn_sx.Click += new System.EventHandler(this.btn_sx_Click_1);
             // 
-            // pic
-            // 
-            this.pic.Location = new System.Drawing.Point(805, 27);
-            this.pic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(196, 176);
-            this.pic.TabIndex = 82;
-            this.pic.TabStop = false;
-            // 
             // btn_dong
             // 
             this.btn_dong.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -529,7 +529,7 @@
             this.btn_tk.Location = new System.Drawing.Point(475, 75);
             this.btn_tk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_tk.Name = "btn_tk";
-            this.btn_tk.Size = new System.Drawing.Size(132, 48);
+            this.btn_tk.Size = new System.Drawing.Size(153, 48);
             this.btn_tk.TabIndex = 53;
             this.btn_tk.Text = "       Tìm kiếm";
             this.btn_tk.UseVisualStyleBackColor = false;
@@ -620,9 +620,9 @@
             this.Load += new System.EventHandler(this.Hanghoa_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_hanghoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
