@@ -18,7 +18,7 @@ namespace QLMP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmHoaDonNhap());
+            Application.Run(new Nhanvien());
         }
     }
 }

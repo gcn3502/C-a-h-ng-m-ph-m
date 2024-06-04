@@ -15,7 +15,7 @@ namespace QLMP.Class
     internal class function
     {
         public static SqlConnection Conn;  //Khai báo đối tượng kết nối
-        public static string connString = "Data Source=LAPTOP-JR56SAT8\\LINH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False";
+        public static string connString = "Data Source=DESKTOP-FI0IVCS;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False";
 
         public static void Connect()
         {
@@ -340,6 +340,187 @@ namespace QLMP.Class
             }
             return h;
         }
+        public static string ChuyenSoSangChu(string number)
+        {
+            int mLen, mDigit;
+            string mTemp = "";
+            string[] mNumText;
+
+            number = number.Replace(",", "");
+            mNumText = "không;một;hai;ba;bốn;năm;sáu;bảy;tám;chín".Split(';');
+            mLen = number.Length - 1;
+            for (int i = 0; i <= mLen; i++)
+            {
+                mDigit = Convert.ToInt32(number.Substring(i, 1));
+                mTemp = mTemp + " " + mNumText[mDigit];
+                if (mLen == i)
+                    break;
+                switch ((mLen - i) % 9)
+                {
+                    case 0:
+                        mTemp = mTemp + " tỷ";
+                        if (number.Substring(i + 1, 3) == "000")
+                            i = i + 3;
+                        if (number.Substring(i + 1, 3) == "000")
+                            i = i + 3;
+                        if (number.Substring(i + 1, 3) == "000")
+                            i = i + 3;
+                        break;
+                    case 6:
+                        mTemp = mTemp + " triệu";
+                        if (number.Substring(i + 1, 3) == "000")
+                            i = i + 3;
+                        if (number.Substring(i + 1, 3) == "000")
+                            i = i + 3;
+                        break;
+                    case 3:
+                        mTemp = mTemp + " nghìn";
+                        if (number.Substring(i + 1, 3) == "000")
+                            i = i + 3;
+                        break;
+                    default:
+                        switch ((mLen - i) % 3)
+                        {
+                            case 2:
+                                mTemp = mTemp + " trăm";
+                                break;
+                            case 1:
+                                mTemp = mTemp + " mươi";
+                                break;
+                        }
+                        break;
+                }
+            }
+
+            mTemp = mTemp.Replace("không mươi không ", "");
+            mTemp = mTemp.Replace("không mươi không", "");
+
+            mTemp = mTemp.Replace("không mươi ", "linh ");
+
+            mTemp = mTemp.Replace("mươi không", "mươi");
+
+            mTemp = mTemp.Replace("một mươi", "mười");
+
+            mTemp = mTemp.Replace("mươi bốn", "mươi tư");
+
+            mTemp = mTemp.Replace("linh bốn", "linh tư");
+
+            mTemp = mTemp.Replace("mươi năm", "mươi lăm");
+
+            mTemp = mTemp.Replace("mươi một", "mươi mốt");
+
+            mTemp = mTemp.Replace("mười năm", "mười lăm");
+
+            mTemp = mTemp.Trim();
+
+            mTemp = mTemp.Substring(0, 1).ToUpper() + mTemp.Substring(1) + " đồng";
+            return mTemp;
+        }
+
+
+        //public static string CreateKey(string prefix)
+        //{
+        //    string key = prefix + DateTime.Now.ToString("yyyyMMddHHmmss");
+        //    return key;
+        //}
+        public static string CreateKeyNhanVien(string prefix)
+        {
+            string maxKey = function.GetFieldValues("SELECT MAX(MaNV) FROM NhanVien");
+
+
+            int newKeyNumber = 1;
+
+            if (!string.IsNullOrEmpty(maxKey))
+            {
+
+                int currentMaxNumber = int.Parse(maxKey.Substring(prefix.Length));
+                newKeyNumber = currentMaxNumber + 1;
+            }
+
+
+            string newKey = prefix + newKeyNumber.ToString("D4");
+
+            return newKey;
+        }
+        public static bool IsDate(string d)
+        {
+            string[] parts = d.Split('/');
+            if (parts.Length != 3)
+            {
+                return false;
+            }
+
+            int day, month, year;
+            if (int.TryParse(parts[0], out day) && int.TryParse(parts[1], out month) && int.TryParse(parts[2], out year))
+            {
+                if (day >= 1 && day <= 31 && month >= 1 && month <= 12 && year >= 1900)
+                {
+                    try
+                    {
+                        DateTime temp = new DateTime(year, month, day);
+                        return true;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+        public static void ExecuteQuery(string query)
+        {
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
+                }
+            }
+        }
+        public static DataTable ExecuteQueryWithParameters(string query, Dictionary<string, object> parameters)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                foreach (var param in parameters)
+                {
+                    command.Parameters.AddWithValue(param.Key, param.Value);
+                }
+
+                try
+                {
+                    connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("Lỗi xảy ra: " + ex.Message);
+                }
+            }
+
+            return dataTable;
+        }
+        public static string ConvertDateTime(string d)
+        {
+            string[] parts = d.Split('/');
+            string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
+
+        }
+
+
 
     }
 }

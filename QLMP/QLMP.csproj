@@ -140,6 +140,12 @@
     <Compile Include="Forms\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\TimkiemHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimkiemHD.Designer.cs">
+      <DependentUpon>TimkiemHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\dangky.resx">
@@ -154,6 +160,12 @@
     <EmbeddedResource Include="Forms\Hanghoa.resx">
       <DependentUpon>Hanghoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hoadonban.resx">
+      <DependentUpon>Hoadonban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hoadonnhap.resx">
+      <DependentUpon>Hoadonnhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimkiemHD.resx">
+      <DependentUpon>TimkiemHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -190,6 +205,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\add_icon.png" />
     <Content Include="Resources\anh.jpg" />
     <None Include="Resources\tải xuống11.jpg" />
     <None Include="Resources\tải xuống2.jpg" />
@@ -205,13 +221,20 @@
     <None Include="Resources\anh1.jpg" />
     <Content Include="Resources\avt.jpg" />
     <Content Include="Resources\avt1.jpg" />
+    <None Include="Resources\boqua_icon.png" />
+    <None Include="Resources\dong_icon.png" />
     <Content Include="Resources\home.jpg" />
     <Content Include="Resources\home1.jpg" />
     <Content Include="Resources\home2.jpg" />
     <Content Include="Resources\homem.png" />
+    <None Include="Resources\hủy_icon.png" />
+    <None Include="Resources\luu_icon.png" />
     <Content Include="Resources\menu.jpg" />
     <Content Include="Resources\mypham3.jpg" />
     <Content Include="Resources\nguon.jpg" />
+    <None Include="Resources\timkiem_icon.png" />
+    <None Include="Resources\save_icon.png" />
+    <None Include="Resources\sua_icon.png" />
     <Content Include="Resources\tải xuống.jpg" />
     <Content Include="Resources\tải xuống1.jpg" />
   </ItemGroup>

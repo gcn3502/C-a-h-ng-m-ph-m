@@ -63,6 +63,16 @@ namespace QLMP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_icon {
+            get {
+                object obj = ResourceManager.GetObject("add_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap anh1 {
             get {
                 object obj = ResourceManager.GetObject("anh1", resourceCulture);
@@ -86,6 +96,26 @@ namespace QLMP.Properties {
         internal static System.Drawing.Bitmap avt1 {
             get {
                 object obj = ResourceManager.GetObject("avt1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boqua_icon {
+            get {
+                object obj = ResourceManager.GetObject("boqua_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dong_icon {
+            get {
+                object obj = ResourceManager.GetObject("dong_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +163,36 @@ namespace QLMP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap huy_icon {
+            get {
+                object obj = ResourceManager.GetObject("huy_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap in_icon {
+            get {
+                object obj = ResourceManager.GetObject("in_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap luu_icon {
+            get {
+                object obj = ResourceManager.GetObject("luu_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
@@ -163,6 +223,16 @@ namespace QLMP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sua_icon {
+            get {
+                object obj = ResourceManager.GetObject("sua_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tải_xuống {
             get {
                 object obj = ResourceManager.GetObject("tải xuống", resourceCulture);
@@ -176,6 +246,16 @@ namespace QLMP.Properties {
         internal static System.Drawing.Bitmap tải_xuống1 {
             get {
                 object obj = ResourceManager.GetObject("tải xuống1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap timkiem_icon {
+            get {
+                object obj = ResourceManager.GetObject("timkiem_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
