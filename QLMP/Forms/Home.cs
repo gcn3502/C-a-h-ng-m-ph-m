@@ -11,13 +11,15 @@ namespace QLMP.FORMS
         public Home(int role)
         {
             InitializeComponent();
-            showSideMenu();
+            showSideMenu(1, 1);
+            showSideMenu(1, 2);
         }
 
         public Home()
         {
             InitializeComponent();
-            showSideMenu();
+            showSideMenu(1, 1);
+            showSideMenu(1, 2);
         }
         // form home nhấn x  thì  đóng hoàn toàn
         // form home nhấn dxuat thì đóng form home -> dnhap
@@ -33,21 +35,21 @@ namespace QLMP.FORMS
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(isExit)
-            Application.Exit();
+            if (isExit)
+                Application.Exit();
         }
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             if (isExit)
-            Application.Exit();
+                Application.Exit();
         }
 
         //private void button7_Click(object sender, EventArgs e)
         //{
         //    if(MessageBox.Show("Bạn có muốn thoát chương trình?","Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
         //    {
-                
+
         //        login dnhap = new login();
         //        dnhap.Show();
         //    }
@@ -55,7 +57,7 @@ namespace QLMP.FORMS
 
         private void Home_Load(object sender, EventArgs e)
         {
-          
+
         }
 
         private void btn_quanly_Click(object sender, EventArgs e)
@@ -63,11 +65,17 @@ namespace QLMP.FORMS
             ShowMenu(panel_QuanlySubMenu);
 
         }
-        private void showSideMenu()
+        private void showSideMenu(int isOpen, int menuNumber)
         {
-            panel_QuanlySubMenu.Visible = false;
-            panel_HdSideMenu.Visible = false;
-          //  panel_menu.Visible=false;
+            if (menuNumber == 1)
+            {
+                panel_QuanlySubMenu.Visible = isOpen == 1 ? false : true;
+
+            }
+            else
+            {
+                panel_HdSideMenu.Visible = isOpen == 1 ? false : true;
+            }
 
         }
         private void HideMenu()
@@ -80,12 +88,12 @@ namespace QLMP.FORMS
             {
                 panel_HdSideMenu.Visible = false;
             }
-          
+
 
         }
         private void ShowMenu(Panel SubMenu)
         {
-            if (SubMenu.Visible==false)
+            if (SubMenu.Visible == false)
             {
                 HideMenu();
                 SubMenu.Visible = true;
@@ -99,17 +107,22 @@ namespace QLMP.FORMS
         private void button2_Click(object sender, EventArgs e)
         {
             openPanelchild(new Hanghoa(), sender);
+            showSideMenu(0, 1);
+            showSideMenu(1, 2);
             // string show;
-            HideMenu();
+            //HideMenu();
             //   Hanghoa hh = new Hanghoa();
             //   hh.ShowDialog();
             //panel_main.Controls.Add(hh);
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            HideMenu();
+            showSideMenu(0, 1);
+            showSideMenu(1, 2);
+            openPanelchild(new Nhanvien(), sender);
+            //HideMenu();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -122,19 +135,27 @@ namespace QLMP.FORMS
             HideMenu();
         }
 
-       
 
-       
+
+
 
         private void btn_hdn_Click(object sender, EventArgs e)
         {
-            HideMenu();
+            //MessageBox.Show("Chức năng đang phát triển");
+            openPanelchild(new frmHoaDonNhap(), sender);
+            showSideMenu(1, 1);
+            showSideMenu(0, 2);
+            //HideMenu();
 
         }
 
         private void btn_hdb_Click(object sender, EventArgs e)
         {
-            HideMenu();
+            //MessageBox.Show("Chức năng đang phát triển");
+            openPanelchild(new Hoadonban(), sender);
+            showSideMenu(1, 1);
+            showSideMenu(0, 2);
+            //HideMenu();
         }
 
         private void btn_hoadon_Click(object sender, EventArgs e)
@@ -142,12 +163,12 @@ namespace QLMP.FORMS
             ShowMenu(panel_HdSideMenu);
         }
 
-      
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-           Home home =new Home();
+            Home home = new Home();
             home.Show();
         }
 
@@ -161,7 +182,7 @@ namespace QLMP.FORMS
             if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
-              login login = new login();
+                login login = new login();
                 login.Show();
             }
         }
@@ -189,6 +210,14 @@ namespace QLMP.FORMS
 
         }
 
-       
+        private void btn_Ncc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_kh_Click(object sender, EventArgs e)
+        {
+            //openPanelchild(new Khachhang(), sender);
+        }
     }
 }
