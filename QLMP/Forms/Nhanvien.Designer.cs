@@ -480,5 +480,6 @@
         private System.Windows.Forms.Label lblcongviec;
         private System.Windows.Forms.Label lbltaikhoan;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -29,17 +29,17 @@ namespace QLMP.Forms
         private void load_datagridview()
         {
             string sql;
-            sql = "SELECT MaKH,TenKH,DiaChi,SDT FROM KhachHang";
+            sql = "SELECT MaKH,TenKH,SDT,DiaChi FROM KhachHang";
             tblKH = function.GetDataToTable(sql);
             dgridkhachhang.DataSource = tblKH;
             dgridkhachhang.Columns[0].HeaderText = "Mã khách";
             dgridkhachhang.Columns[1].HeaderText = "Tên khách";
-            dgridkhachhang.Columns[2].HeaderText = "Địa chỉ";
-            dgridkhachhang.Columns[3].HeaderText = "Số điện thoại";
+            dgridkhachhang.Columns[2].HeaderText = "Số điện thoại";
+            dgridkhachhang.Columns[3].HeaderText = "Địa chỉ";
             dgridkhachhang.Columns[0].Width = 100;
-            dgridkhachhang.Columns[1].Width = 150;
-            dgridkhachhang.Columns[2].Width = 150;
-            dgridkhachhang.Columns[3].Width = 150;
+            dgridkhachhang.Columns[1].Width = 160;
+            dgridkhachhang.Columns[2].Width = 120;
+            dgridkhachhang.Columns[3].Width = 120;
             dgridkhachhang.AllowUserToAddRows = false;
             dgridkhachhang.EditMode = DataGridViewEditMode.EditProgrammatically;
 

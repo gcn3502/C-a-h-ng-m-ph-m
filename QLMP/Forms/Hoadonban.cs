@@ -215,7 +215,7 @@ namespace QLMP.Forms
             string tongtien = function.GetFieldValues(tongtienquery);
             txttongtien.Text = tongtien;
             txtbangchu.Text = function.ChuyenSoSangChu(tongtien);
-
+            btnin.Enabled = true;
             btnhuy.Enabled = true;
             btndong.Enabled = true;
             btnboqua.Enabled = true;
@@ -737,6 +737,9 @@ namespace QLMP.Forms
             cbomahoadon.SelectedIndex = -1;
         }
 
-        
+        private void cbomahang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     } 
 }

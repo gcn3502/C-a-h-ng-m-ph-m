@@ -25,7 +25,7 @@ namespace QLMP.Forms
         private void frmHoaDonNhap_Load(object sender, EventArgs e)
         {
             btnthem.Enabled = true;
-            btnsua.Enabled = false;
+            //btnsua.Enabled = false;
             btnluu.Enabled = false;
             btnhuy.Enabled = false;
             btnin.Enabled = false;
@@ -86,7 +86,7 @@ namespace QLMP.Forms
             dgridHDNhap.Columns[5].Width = 150;
             dgridHDNhap.AllowUserToAddRows = false;
             dgridHDNhap.EditMode = DataGridViewEditMode.EditProgrammatically;
-            btnsua.Enabled = true;
+            //btnsua.Enabled = true;
         }
 
         private void LoadInfoHD()
@@ -109,7 +109,7 @@ namespace QLMP.Forms
 
         private void btnthem_Click_1(object sender, EventArgs e)
         {
-            btnsua.Enabled = false;
+            //btnsua.Enabled = false;
             btnhuy.Enabled = false;
             btnluu.Enabled = true;
             btnin.Enabled = false;
@@ -243,7 +243,7 @@ namespace QLMP.Forms
             function.RunSql(sql);
 
             ResetValuesHang();
-            btnsua.Enabled = true;
+            //btnsua.Enabled = true;
             btnhuy.Enabled = true;
             btnthem.Enabled = true;
             btnin.Enabled = true;
@@ -423,7 +423,7 @@ namespace QLMP.Forms
             LoadInfoHD();
             LoadDataGridView();
             btnhuy.Enabled = true;
-            btnsua.Enabled = true;
+            //btnsua.Enabled = true;
             btnluu.Enabled = true;
             btnin.Enabled = true;
             ResetValuesHang();
@@ -560,7 +560,7 @@ namespace QLMP.Forms
             txtchietkhau.Text = dgridHDNhap.CurrentRow.Cells["ChietKhau"].Value.ToString();
             txtthanhtien.Text = dgridHDNhap.CurrentRow.Cells["ThanhTien"].Value.ToString();
             txtdongia.Text = dgridHDNhap.CurrentRow.Cells["DonGiaNhap"].Value.ToString();
-            btnsua.Enabled = true;
+            //btnsua.Enabled = true;
         }
 
         //private void btnsua_Click(object sender, EventArgs e)

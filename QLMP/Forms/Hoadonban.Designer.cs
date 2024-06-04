@@ -135,6 +135,7 @@
             this.cbomahang.Name = "cbomahang";
             this.cbomahang.Size = new System.Drawing.Size(200, 27);
             this.cbomahang.TabIndex = 32;
+            this.cbomahang.SelectedIndexChanged += new System.EventHandler(this.cbomahang_SelectedIndexChanged);
             this.cbomahang.TextChanged += new System.EventHandler(this.cbomahang_TextChanged);
             // 
             // txtthanhtien
@@ -271,6 +272,7 @@
             // 
             // dgridhoadonban
             // 
+            this.dgridhoadonban.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgridhoadonban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgridhoadonban.Location = new System.Drawing.Point(15, 134);
             this.dgridhoadonban.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -460,7 +462,7 @@
             this.lbldiachi.Name = "lbldiachi";
             this.lbldiachi.Size = new System.Drawing.Size(63, 19);
             this.lbldiachi.TabIndex = 6;
-            this.lbldiachi.Text = "Địa chỉ:";
+            this.lbldiachi.Text = "Địa chỉ khách hàng:";
             // 
             // lbltenkhachhang
             // 
