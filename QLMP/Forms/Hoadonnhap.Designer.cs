@@ -191,6 +191,7 @@
             this.cbomanhanvien.Size = new System.Drawing.Size(382, 32);
             this.cbomanhanvien.TabIndex = 10;
             this.cbomanhanvien.SelectedIndexChanged += new System.EventHandler(this.cbomanhanvien_SelectedIndexChanged);
+            //this.cbomanhanvien.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cbomanhanvien_KeyUp);
             // 
             // dtngaynhap
             // 
@@ -499,6 +500,7 @@
             this.txtdongia.TabIndex = 5;
             this.txtdongia.TextChanged += new System.EventHandler(this.txtdongia_TextChanged);
             this.txtdongia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdongia_KeyPress);
+            //this.txtdongia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtdongia_KeyUp);
             // 
             // label12
             // 

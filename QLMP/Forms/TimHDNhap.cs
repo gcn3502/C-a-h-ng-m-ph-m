@@ -111,5 +111,80 @@ namespace QLMP.Forms
                 frm.ShowDialog();
             }
         }
+
+        private void txtngay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13))
+                e.Handled = false;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Bạn chỉ được nhập số nguyên ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtthang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13))
+                e.Handled = false;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Bạn chỉ được nhập số nguyên dương", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtnam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13))
+                e.Handled = false;
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Bạn chỉ được nhập số nguyên dương", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtngay_TextChanged(object sender, EventArgs e)
+        {
+            if (!(txtngay.Text.Trim().Length == 0))
+            {
+                int ngay = Convert.ToInt32(txtngay.Text);
+                if (ngay < 1 || ngay > 31)
+                {
+                    MessageBox.Show("Bạn phải nhậP ngày trong khoảng từ 1-31", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtngay.Text = "";
+                    txtngay.Focus();
+                }
+            }
+        }
+
+        private void txtthang_TextChanged(object sender, EventArgs e)
+        {
+            if (!(txtthang.Text.Trim().Length == 0) )
+            {
+                int thang = Convert.ToInt32(txtthang.Text);
+                if (thang < 1 || thang > 12)
+                {
+                    MessageBox.Show("Bạn phải nhập tháng trong khoảng từ 1-12", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtthang.Text = "";
+                    txtthang.Focus();
+                }
+            }
+        }
+
+        private void txtnam_TextChanged(object sender, EventArgs e)
+        {
+            if (!(txtnam.Text.Trim().Length == 0))
+            {
+                int nam = Convert.ToInt32(txtnam.Text);
+                if (nam > DateTime.Now.Year)
+                {
+                    MessageBox.Show("Bạn phải nhập năm nhỏ hơn năm hiện tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtnam.Text = "";
+                    txtnam.Focus();
+                }
+            }
+        }
     }
 }
