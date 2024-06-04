@@ -592,7 +592,7 @@
         private System.Windows.Forms.Label lbltenhang;
         private System.Windows.Forms.Label lblmahang;
         private System.Windows.Forms.GroupBox grpttchung;
-        private System.Windows.Forms.TextBox txtmahoadon;
+        public System.Windows.Forms.TextBox txtmahoadon;
         private System.Windows.Forms.ComboBox cbomanhanvien;
         private System.Windows.Forms.ComboBox cbomakhachhang;
         private System.Windows.Forms.MaskedTextBox mskngayban;
