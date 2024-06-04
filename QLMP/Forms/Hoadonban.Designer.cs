@@ -81,7 +81,7 @@
             // btnboqua
             // 
             this.btnboqua.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnboqua.Location = new System.Drawing.Point(815, 443);
+            this.btnboqua.Location = new System.Drawing.Point(760, 443);
             this.btnboqua.Name = "btnboqua";
             this.btnboqua.Size = new System.Drawing.Size(135, 54);
             this.btnboqua.TabIndex = 36;
@@ -111,7 +111,7 @@
             // 
             this.lbltongtien.AutoSize = true;
             this.lbltongtien.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltongtien.Location = new System.Drawing.Point(849, 331);
+            this.lbltongtien.Location = new System.Drawing.Point(727, 334);
             this.lbltongtien.Name = "lbltongtien";
             this.lbltongtien.Size = new System.Drawing.Size(90, 22);
             this.lbltongtien.TabIndex = 14;
@@ -119,7 +119,7 @@
             // 
             // txttongtien
             // 
-            this.txttongtien.Location = new System.Drawing.Point(949, 325);
+            this.txttongtien.Location = new System.Drawing.Point(823, 331);
             this.txttongtien.Name = "txttongtien";
             this.txttongtien.Size = new System.Drawing.Size(146, 30);
             this.txttongtien.TabIndex = 33;
@@ -131,42 +131,43 @@
             this.cbomahang.Name = "cbomahang";
             this.cbomahang.Size = new System.Drawing.Size(224, 30);
             this.cbomahang.TabIndex = 32;
+            this.cbomahang.SelectedIndexChanged += new System.EventHandler(this.cbomahang_SelectedIndexChanged);
             this.cbomahang.TextChanged += new System.EventHandler(this.cbomahang_TextChanged);
             // 
             // txtthanhtien
             // 
-            this.txtthanhtien.Location = new System.Drawing.Point(902, 75);
+            this.txtthanhtien.Location = new System.Drawing.Point(780, 78);
             this.txtthanhtien.Name = "txtthanhtien";
             this.txtthanhtien.Size = new System.Drawing.Size(189, 30);
             this.txtthanhtien.TabIndex = 24;
             // 
             // txtdongia
             // 
-            this.txtdongia.Location = new System.Drawing.Point(902, 29);
+            this.txtdongia.Location = new System.Drawing.Point(778, 33);
             this.txtdongia.Name = "txtdongia";
             this.txtdongia.Size = new System.Drawing.Size(189, 30);
             this.txtdongia.TabIndex = 23;
             // 
             // txtchietkhau
             // 
-            this.txtchietkhau.Location = new System.Drawing.Point(516, 78);
+            this.txtchietkhau.Location = new System.Drawing.Point(477, 76);
             this.txtchietkhau.Name = "txtchietkhau";
-            this.txtchietkhau.Size = new System.Drawing.Size(258, 30);
+            this.txtchietkhau.Size = new System.Drawing.Size(149, 30);
             this.txtchietkhau.TabIndex = 22;
             this.txtchietkhau.TextChanged += new System.EventHandler(this.txtchietkhau_TextChanged);
             // 
             // txttenhang
             // 
-            this.txttenhang.Location = new System.Drawing.Point(516, 32);
+            this.txttenhang.Location = new System.Drawing.Point(106, 78);
             this.txttenhang.Name = "txttenhang";
-            this.txttenhang.Size = new System.Drawing.Size(258, 30);
+            this.txttenhang.Size = new System.Drawing.Size(224, 30);
             this.txttenhang.TabIndex = 21;
             // 
             // txtsoluong
             // 
-            this.txtsoluong.Location = new System.Drawing.Point(106, 81);
+            this.txtsoluong.Location = new System.Drawing.Point(477, 38);
             this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(224, 30);
+            this.txtsoluong.Size = new System.Drawing.Size(149, 30);
             this.txtsoluong.TabIndex = 20;
             this.txtsoluong.TextChanged += new System.EventHandler(this.txtsoluong_TextChanged);
             // 
@@ -190,7 +191,7 @@
             // btndong
             // 
             this.btndong.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndong.Location = new System.Drawing.Point(974, 443);
+            this.btndong.Location = new System.Drawing.Point(905, 443);
             this.btndong.Name = "btndong";
             this.btndong.Size = new System.Drawing.Size(121, 54);
             this.btndong.TabIndex = 18;
@@ -201,7 +202,7 @@
             // btnin
             // 
             this.btnin.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnin.Location = new System.Drawing.Point(634, 443);
+            this.btnin.Location = new System.Drawing.Point(599, 443);
             this.btnin.Name = "btnin";
             this.btnin.Size = new System.Drawing.Size(155, 54);
             this.btnin.TabIndex = 18;
@@ -223,7 +224,7 @@
             // btnhuy
             // 
             this.btnhuy.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhuy.Location = new System.Drawing.Point(439, 443);
+            this.btnhuy.Location = new System.Drawing.Point(404, 443);
             this.btnhuy.Name = "btnhuy";
             this.btnhuy.Size = new System.Drawing.Size(144, 54);
             this.btnhuy.TabIndex = 16;
@@ -234,7 +235,7 @@
             // btnluu
             // 
             this.btnluu.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnluu.Location = new System.Drawing.Point(241, 443);
+            this.btnluu.Location = new System.Drawing.Point(215, 443);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(124, 54);
             this.btnluu.TabIndex = 15;
@@ -255,14 +256,14 @@
             // 
             // dgridhoadonban
             // 
+            this.dgridhoadonban.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgridhoadonban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgridhoadonban.Location = new System.Drawing.Point(16, 134);
+            this.dgridhoadonban.Location = new System.Drawing.Point(23, 130);
             this.dgridhoadonban.Name = "dgridhoadonban";
             this.dgridhoadonban.RowHeadersWidth = 62;
             this.dgridhoadonban.RowTemplate.Height = 28;
-            this.dgridhoadonban.Size = new System.Drawing.Size(1079, 169);
+            this.dgridhoadonban.Size = new System.Drawing.Size(946, 169);
             this.dgridhoadonban.TabIndex = 3;
-            //this.dgridhoadonban.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgridhoadonban_CellClick);
             this.dgridhoadonban.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgridhoadonban_CellDoubleClick);
             this.dgridhoadonban.Click += new System.EventHandler(this.dgridhoadonban_Click);
             // 
@@ -270,7 +271,7 @@
             // 
             this.lblthanhtien.AutoSize = true;
             this.lblthanhtien.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblthanhtien.Location = new System.Drawing.Point(797, 81);
+            this.lblthanhtien.Location = new System.Drawing.Point(676, 81);
             this.lblthanhtien.Name = "lblthanhtien";
             this.lblthanhtien.Size = new System.Drawing.Size(98, 22);
             this.lblthanhtien.TabIndex = 13;
@@ -280,7 +281,7 @@
             // 
             this.lblchietkhau.AutoSize = true;
             this.lblchietkhau.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblchietkhau.Location = new System.Drawing.Point(402, 81);
+            this.lblchietkhau.Location = new System.Drawing.Point(364, 81);
             this.lblchietkhau.Name = "lblchietkhau";
             this.lblchietkhau.Size = new System.Drawing.Size(99, 22);
             this.lblchietkhau.TabIndex = 12;
@@ -290,7 +291,7 @@
             // 
             this.lblsoluong.AutoSize = true;
             this.lblsoluong.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsoluong.Location = new System.Drawing.Point(12, 84);
+            this.lblsoluong.Location = new System.Drawing.Point(364, 41);
             this.lblsoluong.Name = "lblsoluong";
             this.lblsoluong.Size = new System.Drawing.Size(88, 22);
             this.lblsoluong.TabIndex = 11;
@@ -300,7 +301,7 @@
             // 
             this.lbldongia.AutoSize = true;
             this.lbldongia.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldongia.Location = new System.Drawing.Point(797, 35);
+            this.lbldongia.Location = new System.Drawing.Point(676, 41);
             this.lbldongia.Name = "lbldongia";
             this.lbldongia.Size = new System.Drawing.Size(79, 22);
             this.lbldongia.TabIndex = 10;
@@ -310,7 +311,7 @@
             // 
             this.lbltenhang.AutoSize = true;
             this.lbltenhang.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltenhang.Location = new System.Drawing.Point(402, 40);
+            this.lbltenhang.Location = new System.Drawing.Point(19, 84);
             this.lbltenhang.Name = "lbltenhang";
             this.lbltenhang.Size = new System.Drawing.Size(87, 22);
             this.lbltenhang.TabIndex = 9;
@@ -348,7 +349,7 @@
             this.grpttchung.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpttchung.Location = new System.Drawing.Point(24, 54);
             this.grpttchung.Name = "grpttchung";
-            this.grpttchung.Size = new System.Drawing.Size(1151, 229);
+            this.grpttchung.Size = new System.Drawing.Size(1049, 229);
             this.grpttchung.TabIndex = 4;
             this.grpttchung.TabStop = false;
             this.grpttchung.Text = "Thông tin chung";
@@ -372,7 +373,7 @@
             // cbomakhachhang
             // 
             this.cbomakhachhang.FormattingEnabled = true;
-            this.cbomakhachhang.Location = new System.Drawing.Point(582, 43);
+            this.cbomakhachhang.Location = new System.Drawing.Point(610, 46);
             this.cbomakhachhang.Name = "cbomakhachhang";
             this.cbomakhachhang.Size = new System.Drawing.Size(313, 30);
             this.cbomakhachhang.TabIndex = 32;
@@ -389,7 +390,7 @@
             // 
             // msksdt
             // 
-            this.msksdt.Location = new System.Drawing.Point(582, 178);
+            this.msksdt.Location = new System.Drawing.Point(610, 178);
             this.msksdt.Mask = "(999) 000-0000";
             this.msksdt.Name = "msksdt";
             this.msksdt.Size = new System.Drawing.Size(313, 30);
@@ -404,14 +405,14 @@
             // 
             // txttenkhachhang
             // 
-            this.txttenkhachhang.Location = new System.Drawing.Point(582, 87);
+            this.txttenkhachhang.Location = new System.Drawing.Point(610, 91);
             this.txttenkhachhang.Name = "txttenkhachhang";
             this.txttenkhachhang.Size = new System.Drawing.Size(313, 30);
             this.txttenkhachhang.TabIndex = 27;
             // 
             // txtdiachi
             // 
-            this.txtdiachi.Location = new System.Drawing.Point(582, 131);
+            this.txtdiachi.Location = new System.Drawing.Point(610, 131);
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.Size = new System.Drawing.Size(313, 30);
             this.txtdiachi.TabIndex = 26;
@@ -432,9 +433,9 @@
             this.lbldiachi.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldiachi.Location = new System.Drawing.Point(439, 139);
             this.lbldiachi.Name = "lbldiachi";
-            this.lbldiachi.Size = new System.Drawing.Size(74, 22);
+            this.lbldiachi.Size = new System.Drawing.Size(165, 22);
             this.lbldiachi.TabIndex = 6;
-            this.lbldiachi.Text = "Địa chỉ:";
+            this.lbldiachi.Text = "Địa chỉ khách hàng:";
             // 
             // lbltenkhachhang
             // 
@@ -537,7 +538,7 @@
             this.grpttmh.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpttmh.Location = new System.Drawing.Point(24, 289);
             this.grpttmh.Name = "grpttmh";
-            this.grpttmh.Size = new System.Drawing.Size(1151, 503);
+            this.grpttmh.Size = new System.Drawing.Size(1049, 503);
             this.grpttmh.TabIndex = 5;
             this.grpttmh.TabStop = false;
             this.grpttmh.Text = "Thông tin các mặt hàng";
@@ -546,7 +547,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 803);
+            this.ClientSize = new System.Drawing.Size(1133, 803);
             this.Controls.Add(this.grpttchung);
             this.Controls.Add(this.lblHDBanHang);
             this.Controls.Add(this.grpttmh);
