@@ -140,6 +140,12 @@
     <Compile Include="Forms\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
+	<Compile Include="Forms\TimHDNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimHDNhap.Designer.cs">
+      <DependentUpon>TimHDNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TKHDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Khachhang.resx">
+      <DependentUpon>Khachhang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
+    </EmbeddedResource>
+	<EmbeddedResource Include="Forms\TimHDNhap.resx">
+      <DependentUpon>TimHDNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TKHDB.resx">
       <DependentUpon>TKHDB.cs</DependentUpon>
