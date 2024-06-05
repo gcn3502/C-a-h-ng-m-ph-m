@@ -55,10 +55,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(344, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(516, 45);
+            this.label1.Size = new System.Drawing.Size(438, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "TÌM KIẾM HÓA ĐƠN BÁN";
             // 
@@ -76,7 +76,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(23, 134);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1099, 202);
@@ -208,7 +208,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgridtkhdb);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(23, 368);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1099, 313);
@@ -230,9 +230,9 @@
             // 
             // btndong
             // 
-            this.btndong.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndong.Image = global::QLMP.Properties.Resources.icons8_close_40;
-            this.btndong.Location = new System.Drawing.Point(768, 705);
+            this.btndong.Location = new System.Drawing.Point(751, 705);
             this.btndong.Name = "btndong";
             this.btndong.Size = new System.Drawing.Size(159, 57);
             this.btndong.TabIndex = 5;
@@ -243,9 +243,9 @@
             // 
             // btntimlai
             // 
-            this.btntimlai.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntimlai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntimlai.Image = global::QLMP.Properties.Resources.icons8_return_40;
-            this.btntimlai.Location = new System.Drawing.Point(526, 705);
+            this.btntimlai.Location = new System.Drawing.Point(512, 705);
             this.btntimlai.Name = "btntimlai";
             this.btntimlai.Size = new System.Drawing.Size(159, 57);
             this.btntimlai.TabIndex = 4;
@@ -256,12 +256,12 @@
             // 
             // btntimkiem
             // 
-            this.btntimkiem.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntimkiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntimkiem.Image = global::QLMP.Properties.Resources.icons8_search_40;
             this.btntimkiem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btntimkiem.Location = new System.Drawing.Point(259, 705);
             this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(191, 57);
+            this.btntimkiem.Size = new System.Drawing.Size(159, 57);
             this.btntimkiem.TabIndex = 3;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
