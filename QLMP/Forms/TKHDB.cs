@@ -29,6 +29,14 @@ namespace QLMP.Forms
         {
             ResetValues();
             dgridtkhdb.DataSource = null;
+
+            // Thực hiện tìm kiếm nếu có mã hóa đơn
+            if (!string.IsNullOrEmpty(mahoadon))
+            {
+                txtmahd.Text = mahoadon;
+                btntimkiem_Click(sender, e);
+
+            }
         }
 
         private void ResetValues()
@@ -117,16 +125,20 @@ namespace QLMP.Forms
 
         private void dgridtkhdb_DoubleClick(object sender, EventArgs e)
         {
-            string mahd;
-            if (MessageBox.Show("Bạn có muốn hiển thị thông tin chi tiết?", "Xác nhận",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                mahd = dgridtkhdb.CurrentRow.Cells["SoHDB"].Value.ToString();
-                Hoadonban frm = new Hoadonban();
-                frm.txtmahoadon.Text = mahd;
-                frm.StartPosition = FormStartPosition.CenterScreen;
-                frm.ShowDialog();
-            }
-
+            //string mahd;
+            //if (MessageBox.Show("Bạn có muốn hiển thị thông tin chi tiết?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //    //mahd = dgridtkhdb.CurrentRow.Cells["SoHDB"].Value.ToString();
+            //    //Hoadonban frm = new Hoadonban();
+            //    //frm.txtmahoadon.Text = mahd;
+            //    //frm.StartPosition = FormStartPosition.CenterScreen;
+            //    //frm.ShowDialog();
+            //}
+            string mahd = dgridtkhdb.CurrentRow.Cells["SoHDB"].Value.ToString();
+            Hoadonban frm = new Hoadonban();
+            frm.MaHoaDon = mahd;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
         private void btndong_Click(object sender, EventArgs e)
