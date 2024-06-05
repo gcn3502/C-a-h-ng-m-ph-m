@@ -23,8 +23,8 @@ namespace QLMP.Forms
         private void Congviec_Load(object sender, EventArgs e)
         {
             function.Connect();
-            txttimkiem.ForeColor = System.Drawing.Color.Gray;
             txttimkiem.Text = "Nhập từ khóa tìm kiếm";
+            txttimkiem.ForeColor = System.Drawing.Color.Gray;
             txttencv.KeyPress += new KeyPressEventHandler(txttencv_KeyPress);
             txtmucluong.KeyPress += new KeyPressEventHandler(txtmucluong_KeyPress);
             txtmucluong.TextChanged += new EventHandler(txtmucluong_TextChanged);
