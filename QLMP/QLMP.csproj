@@ -113,6 +113,12 @@
     <Compile Include="Forms\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Nhacungcap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,7 +146,7 @@
     <Compile Include="Forms\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
-	<Compile Include="Forms\TimHDNhap.cs">
+    <Compile Include="Forms\TimHDNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TimHDNhap.Designer.cs">
@@ -154,11 +160,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Congviec.resx">
+      <DependentUpon>Congviec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\dangky.resx">
       <DependentUpon>Dangky.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\dnhap.resx">
       <DependentUpon>dnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Doanhthu.resx">
+      <DependentUpon>Doanhthu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Formhome.resx">
       <DependentUpon>Formhome.cs</DependentUpon>
@@ -181,13 +193,22 @@
     <EmbeddedResource Include="Forms\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Nhacungcap.resx">
+      <DependentUpon>Nhacungcap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Nhanvien.resx">
       <DependentUpon>Nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Phanloai.resx">
+      <DependentUpon>Phanloai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
     </EmbeddedResource>
-	<EmbeddedResource Include="Forms\TimHDNhap.resx">
+    <EmbeddedResource Include="Forms\TimHDNhap.resx">
       <DependentUpon>TimHDNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TKHDB.resx">
@@ -244,6 +265,22 @@
     <None Include="Resources\icons8-search-40.png" />
     <None Include="Resources\icons8-return-40.png" />
     <None Include="Resources\icons8-close-40.png" />
+    <None Include="Resources\icons8-reset-25 %281%29.png" />
+    <None Include="Resources\icons8-add-20 %281%29.png" />
+    <None Include="Resources\icons8-add-18.png" />
+    <None Include="Resources\icons8-add-181.png" />
+    <None Include="Resources\icons8-save-16.png" />
+    <None Include="Resources\icons8-save-161.png" />
+    <None Include="Resources\icons8-close-20 %281%29.png" />
+    <None Include="Resources\icons8-delete-20.png" />
+    <None Include="Resources\icons8-print-18.png" />
+    <None Include="Resources\icons8-search-20.png" />
+    <None Include="Resources\icons8-reset-25 %281%291.png" />
+    <None Include="Resources\icons8-reset-16.png" />
+    <None Include="Resources\icons8-search-201.png" />
+    <None Include="Resources\icons8-fix-30.png" />
+    <None Include="Resources\icons8-fix-16.png" />
+    <None Include="Resources\icons8-close-20 %281%291.png" />
     <Content Include="Resources\menu.jpg" />
     <Content Include="Resources\mypham3.jpg" />
     <Content Include="Resources\nguon.jpg" />

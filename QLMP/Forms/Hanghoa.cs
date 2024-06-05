@@ -23,6 +23,7 @@ namespace QLMP.Forms
         private void Hanghoa_Load(object sender, EventArgs e)
         {
             function.Connect();
+            txt_tk.Focus();
             txt_mahang.Enabled = false;
             btn_luu.Enabled = false;
             btn_boqua.Enabled = false;
@@ -273,6 +274,7 @@ namespace QLMP.Forms
                 txt_anh.Focus();
                 return;
             }
+           
             sql = "SELECT Mahang FROM Hang WHERE Mahang=N'" + txt_mahang.Text.Trim() + "'";
             if (function.CheckKey(sql))
             {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.components = new System.ComponentModel.Container();
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
@@ -304,6 +305,18 @@
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+=======
+            this.SuspendLayout();
+            // 
+            // Nhacungcap
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1147, 872);
+            this.Name = "Nhacungcap";
+            this.Text = "Nhacungcap";
+            this.ResumeLayout(false);
+>>>>>>> aaa7b26907d8a8d3df9b66e426160b7a212372c9
 
         }
 

@@ -217,7 +217,47 @@ namespace QLMP.FORMS
 
         private void btn_kh_Click(object sender, EventArgs e)
         {
-            //openPanelchild(new Khachhang(), sender);
+            openPanelchild(new Khachhang(), sender);
+        }
+
+        private void btn_Ncc_Click_1(object sender, EventArgs e)
+        {
+            openPanelchild(new Nhacungcap(), sender);
+        }
+
+        private void btn_kh_Click_1(object sender, EventArgs e)
+        {
+            openPanelchild(new Khachhang(), sender);
+        }
+
+        private void panel_HdSideMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_QuanlySubMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_child_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lb_nhom_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

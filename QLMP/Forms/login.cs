@@ -28,7 +28,7 @@ namespace QLMP.Forms
         private void btn_login_Click(object sender, EventArgs e)
         {
             // Tạo kết nối SQL
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False");
+            SqlConnection con = new SqlConnection("Data Source=LAPTOP-59G1UB6L\\LANANH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False");
             con.Open();
 
             // Tạo câu lệnh SQL
@@ -52,7 +52,7 @@ namespace QLMP.Forms
                 }
 
                 // Khởi tạo Home form với role
-                Home h = new Home(role);
+                Main h = new Main(role);
                 h.ShowDialog();
                 this.Hide();
             }

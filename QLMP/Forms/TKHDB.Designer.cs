@@ -56,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 38);
+            this.label1.Location = new System.Drawing.Point(344, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(516, 45);
             this.label1.TabIndex = 0;
@@ -79,7 +79,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(23, 134);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1147, 202);
+            this.groupBox1.Size = new System.Drawing.Size(1099, 202);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
@@ -211,7 +211,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(23, 368);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1147, 202);
+            this.groupBox2.Size = new System.Drawing.Size(1099, 313);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách hiển thị";
@@ -220,11 +220,11 @@
             // 
             this.dgridtkhdb.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgridtkhdb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgridtkhdb.Location = new System.Drawing.Point(18, 31);
+            this.dgridtkhdb.Location = new System.Drawing.Point(20, 33);
             this.dgridtkhdb.Name = "dgridtkhdb";
             this.dgridtkhdb.RowHeadersWidth = 51;
             this.dgridtkhdb.RowTemplate.Height = 24;
-            this.dgridtkhdb.Size = new System.Drawing.Size(1109, 150);
+            this.dgridtkhdb.Size = new System.Drawing.Size(1061, 258);
             this.dgridtkhdb.TabIndex = 0;
             this.dgridtkhdb.DoubleClick += new System.EventHandler(this.dgridtkhdb_DoubleClick);
             // 
@@ -232,9 +232,9 @@
             // 
             this.btndong.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndong.Image = global::QLMP.Properties.Resources.icons8_close_40;
-            this.btndong.Location = new System.Drawing.Point(771, 625);
+            this.btndong.Location = new System.Drawing.Point(768, 705);
             this.btndong.Name = "btndong";
-            this.btndong.Size = new System.Drawing.Size(159, 48);
+            this.btndong.Size = new System.Drawing.Size(159, 57);
             this.btndong.TabIndex = 5;
             this.btndong.Text = "Đóng";
             this.btndong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -245,9 +245,9 @@
             // 
             this.btntimlai.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntimlai.Image = global::QLMP.Properties.Resources.icons8_return_40;
-            this.btntimlai.Location = new System.Drawing.Point(529, 625);
+            this.btntimlai.Location = new System.Drawing.Point(526, 705);
             this.btntimlai.Name = "btntimlai";
-            this.btntimlai.Size = new System.Drawing.Size(159, 48);
+            this.btntimlai.Size = new System.Drawing.Size(159, 57);
             this.btntimlai.TabIndex = 4;
             this.btntimlai.Text = "Tìm lại";
             this.btntimlai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -258,9 +258,10 @@
             // 
             this.btntimkiem.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntimkiem.Image = global::QLMP.Properties.Resources.icons8_search_40;
-            this.btntimkiem.Location = new System.Drawing.Point(287, 625);
+            this.btntimkiem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btntimkiem.Location = new System.Drawing.Point(259, 705);
             this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(159, 48);
+            this.btntimkiem.Size = new System.Drawing.Size(191, 57);
             this.btntimkiem.TabIndex = 3;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -271,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1206, 708);
+            this.ClientSize = new System.Drawing.Size(1147, 872);
             this.Controls.Add(this.btndong);
             this.Controls.Add(this.btntimlai);
             this.Controls.Add(this.btntimkiem);
