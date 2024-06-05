@@ -15,7 +15,7 @@ namespace QLMP.Class
     internal class function
     {
         public static SqlConnection Conn;  //Khai báo đối tượng kết nối
-        public static string connString = "Data Source=LAPTOP-59G1UB6L\\LANANH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False";
+        public static string connString = "Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False";
 
         public static void Connect()
         {

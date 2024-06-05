@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\function.cs" />
+    <Compile Include="Class\Utils.cs" />
     <Compile Include="Forms\Congviec.cs">
       <SubType>Form</SubType>
     </Compile>

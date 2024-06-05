@@ -141,7 +141,7 @@ namespace QLMP.Forms
         private void btn_ncc_Click(object sender, EventArgs e)
         {
 
-            openPanelchild(new Nhacungcap(), sender);
+            openPanelchild(new NhaCungCap(), sender);
             showSideMenu(1, 1); // hiện
             showSideMenu(0, 2); // k hiện
             showSideMenu(0, 3);
