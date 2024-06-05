@@ -17,7 +17,13 @@ namespace QLMP.Forms
         {
             InitializeComponent();
         }
+        private string mahoadon;
 
+        public TKHDB(string mahoadon)
+        {
+            InitializeComponent();
+            this.mahoadon = mahoadon;
+        }
         DataTable tblHDB;
         private void TKHDB_Load(object sender, EventArgs e)
         {

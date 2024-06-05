@@ -280,106 +280,91 @@ namespace QLMP.Forms
         {
             string sql;
             double slcon, tong, tongmoi;
+            int sl;
 
             sql = "SELECT SoHDB FROM HDBan WHERE SoHDB=N'" + txtmahoadon.Text + "'";
-            if (!function.CheckKey(sql))
+            bool isHDBanExists = function.CheckKey(sql);
+
+            if (cbomanhanvien.Text.Length == 0)
             {
-
-                if (cbomanhanvien.Text.Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cbomanhanvien.Focus();
-                    return;
-                }
-                if (cbomakhachhang.Text.Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cbomakhachhang.Focus();
-                    return;
-                }
-
-                sql = "INSERT INTO HDBan(SoHDB, NgayBan, MaNV, MaKH, TongTien) VALUES(N'" + txtmahoadon.Text.Trim() + "', '" + function.ConvertDateTime(mskngayban.Text.Trim()) + "',N'" + cbomanhanvien.SelectedValue + "',N'" + cbomakhachhang.SelectedValue + "'," + txttongtien.Text + ")";
-                function.RunSql(sql);
-                if (cbomahang.Text.Trim().Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập mã hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cbomahang.Focus();
-                    return;
-                }
-                if ((txtsoluong.Text.Trim().Length == 0) || (txtsoluong.Text == "0"))
-                {
-                    MessageBox.Show("Bạn phải nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtsoluong.Text = "";
-                    txtsoluong.Focus();
-                    return;
-
-                }
-
-                if (txtchietkhau.Text.Trim().Length == 0)
-                {
-                    MessageBox.Show("Bạn phải nhập giảm giá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtchietkhau.Focus();
-                    return;
-                }
-                sql = "SELECT MaHang FROM CTHDBan WHERE MaHang= N'" + cbomahang.SelectedValue + "' AND SoHDB = N'" + txtmahoadon.Text.Trim() + "'";
-                if (function.CheckKey(sql))
-                {
-                    MessageBox.Show("Mã hàng này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    ResetValuesHang();
-                    cbomahang.Focus();
-                    return;
-
-                }
-                if (!int.TryParse(txtsoluong.Text, out int sl) || sl <= 0)
-                {
-                    MessageBox.Show("Bạn chỉ được nhập số nguyên dương cho số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtsoluong.Text = string.Empty;
-                    txtsoluong.Focus();
-                    return;
-                }
-
-                sl = Convert.ToInt32(function.GetFieldValues("SELECT SoLuong FROM Hang WHERE MaHang = N'" + cbomahang.SelectedValue + "'"));
-                if (Convert.ToInt32(txtsoluong.Text) > sl)
-                {
-                    MessageBox.Show("Số lượng mặt hàng này chỉ còn " + sl, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtsoluong.Text = "";
-                    txtsoluong.Focus();
-                    return;
-
-                }
-              
-                
-
-                sql = "INSERT INTO CTHDBan(SoHDB,MaHang,SoLuong,ChietKhau, ThanhTien) VALUES(N'" + txtmahoadon.Text.Trim() + "', N'" + cbomahang.SelectedValue + "'," + txtsoluong.Text + "," + txtchietkhau.Text + "," + txtthanhtien.Text + ")";
-                function.RunSql(sql);
-                Load_DataGridViewChitiet();
-
-                string sqlsoluong = "SELECT SoLuong FROM Hang WHERE MaHang = N'" + cbomahang.SelectedValue + "'";
-                sl = Convert.ToInt32(function.GetFieldValues(sqlsoluong));
-
-                slcon = sl - Convert.ToInt32(txtsoluong.Text);
-                sql = "UPDATE Hang SET SoLuong =" + slcon + " WHERE MaHang= N'" + cbomahang.SelectedValue + "'";
-                function.RunSql(sql);
-
-                tong = Convert.ToDouble(function.GetFieldValues("SELECT TongTien FROM HDBan WHERE SoHDB = N'" + txtmahoadon.Text + "'"));
-
-                tongmoi = tong + Convert.ToDouble(txtthanhtien.Text);
-                
-
-                sql = "UPDATE HDBan SET TongTien =" + tongmoi + " WHERE SoHDB = N'" + txtmahoadon.Text + "'";
-                function.RunSql(sql);
-
-                txttongtien.Text = tongmoi.ToString();
-                txtbangchu.Text = function.ChuyenSoSangChu(tongmoi.ToString());
-
-                ResetValuesHang();
-                //MessageBox.Show("Hóa đơn đã được lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                btnhuy.Enabled = true;
-                btnthem.Enabled = true;
-                btnin.Enabled = true;
-
+                MessageBox.Show("Bạn phải nhập nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbomanhanvien.Focus();
+                return;
             }
+            if (cbomakhachhang.Text.Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbomakhachhang.Focus();
+                return;
+            }
+
+            if (!isHDBanExists)
+            {
+                sql = "INSERT INTO HDBan(SoHDB, NgayBan, MaNV, MaKH, TongTien) VALUES(N'" + txtmahoadon.Text.Trim() + "', '" + function.ConvertDateTime(mskngayban.Text.Trim()) + "',N'" + cbomanhanvien.SelectedValue + "',N'" + cbomakhachhang.SelectedValue + "', 0)";
+                function.RunSql(sql);
+            }
+
+            if (cbomahang.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mã hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbomahang.Focus();
+                return;
+            }
+            if ((txtsoluong.Text.Trim().Length == 0) || (txtsoluong.Text == "0"))
+            {
+                MessageBox.Show("Bạn phải nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtsoluong.Text = "";
+                txtsoluong.Focus();
+                return;
+            }
+            if (txtchietkhau.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập chiết khấu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtchietkhau.Focus();
+                return;
+            }
+
+            sql = "SELECT MaHang FROM CTHDBan WHERE MaHang= N'" + cbomahang.SelectedValue + "' AND SoHDB = N'" + txtmahoadon.Text.Trim() + "'";
+            if (function.CheckKey(sql))
+            {
+                MessageBox.Show("Mã hàng này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ResetValuesHang();
+                cbomahang.Focus();
+                return;
+            }
+
+            sl = Convert.ToInt32(function.GetFieldValues("SELECT SoLuong FROM Hang WHERE MaHang = N'" + cbomahang.SelectedValue + "'"));
+            if (Convert.ToInt32(txtsoluong.Text) > sl)
+            {
+                MessageBox.Show("Số lượng mặt hàng này chỉ còn " + sl, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtsoluong.Text = "";
+                txtsoluong.Focus();
+                return;
+            }
+
+            sql = "INSERT INTO CTHDBan(SoHDB, MaHang, SoLuong, ChietKhau, ThanhTien) VALUES(N'" + txtmahoadon.Text.Trim() + "', N'" + cbomahang.SelectedValue + "'," + txtsoluong.Text + "," + txtchietkhau.Text + "," + txtthanhtien.Text + ")";
+            function.RunSql(sql);
+            Load_DataGridViewChitiet();
+
+            slcon = sl - Convert.ToInt32(txtsoluong.Text);
+            sql = "UPDATE Hang SET SoLuong =" + slcon + " WHERE MaHang= N'" + cbomahang.SelectedValue + "'";
+            function.RunSql(sql);
+
+            tong = Convert.ToDouble(function.GetFieldValues("SELECT TongTien FROM HDBan WHERE SoHDB = N'" + txtmahoadon.Text + "'"));
+            tongmoi = tong + Convert.ToDouble(txtthanhtien.Text);
+            sql = "UPDATE HDBan SET TongTien =" + tongmoi + " WHERE SoHDB = N'" + txtmahoadon.Text + "'";
+            function.RunSql(sql);
+
+            txttongtien.Text = tongmoi.ToString();
+            txtbangchu.Text = function.ChuyenSoSangChu(tongmoi.ToString());
+
+      
+            ResetValuesHang();
+
+            btnhuy.Enabled = true;
+            btnthem.Enabled = true;
+            btnin.Enabled = true;
+        
         }
 
         private void dgridhoadonban_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -723,11 +708,11 @@ namespace QLMP.Forms
                 return;
             }
             string mahd = cbomahoadon.Text;
-
-
-            //TimkiemHD timkiemHDForm = new TimkiemHD(mahd);
-            //timkiemHDForm.Show(); 
             this.Hide();
+            TKHDB frmTKHDB = new TKHDB(mahd);
+            frmTKHDB.ShowDialog();
+
+            this.Show();
         }
 
         private void cbomahoadon_DropDown(object sender, EventArgs e)
