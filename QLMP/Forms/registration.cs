@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
@@ -11,6 +13,29 @@ namespace QLMP.Forms
         public registration()
         {
             InitializeComponent();
+        }
+
+        string HashPassword(string password, byte[] salt)
+        {
+            using (var sha256 = new SHA256Managed())
+            {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] saltedPassword = new byte[passwordBytes.Length + salt.Length];
+
+                // Concatenate password and salt
+                Buffer.BlockCopy(passwordBytes, 0, saltedPassword, 0, passwordBytes.Length);
+                Buffer.BlockCopy(salt, 0, saltedPassword, passwordBytes.Length, salt.Length);
+
+                // Hash the concatenated password and salt
+                byte[] hashedBytes = sha256.ComputeHash(saltedPassword);
+
+                // Concatenate the salt and hashed password for storage
+                byte[] hashedPasswordWithSalt = new byte[hashedBytes.Length + salt.Length];
+                Buffer.BlockCopy(salt, 0, hashedPasswordWithSalt, 0, salt.Length);
+                Buffer.BlockCopy(hashedBytes, 0, hashedPasswordWithSalt, salt.Length, hashedBytes.Length);
+
+                return Convert.ToBase64String(hashedPasswordWithSalt);
+            }
         }
 
         private void chbox_hienthi_Click_1(object sender, EventArgs e)
@@ -49,23 +74,6 @@ namespace QLMP.Forms
                 txt_tk.Focus();
                 return;
             }
-            //if (txt_email.Text == "")
-            //{
-            //    MessageBox.Show("Vui lòng nhập Email", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            //    txt_email.Focus();
-            //    return;
-            //}
-            //// ktra email hợp lệ?
-            //string email = txt_email.Text;
-            //bool isValid = IsValidEmail(email);
-
-            //if (!isValid)
-            //{
-            //    MessageBox.Show("Email không hợp lệ!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            //    txt_email.Text = " ";
-            //    return;
-            //}
-            //
             if (txt_mk.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
@@ -87,25 +95,6 @@ namespace QLMP.Forms
                 txt_xacnhan.Text = " ";
                 return;
             }
-
-
-
-            // mk >8 ký tự tên > 6 ktu
-            //if(txt_mk.Text.Length <8 )
-            //  {
-            //      MessageBox.Show("Mật khẩu phải lớn hơn 8 ký tự", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            //      return;
-            //  }
-            //if(txt_tk.Text.Length < 6)
-            //  {
-            //      MessageBox.Show("Tên tài khoản phải lớn hơn 6 ký tự", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            //      return;
-            //  }
-
-        //// ktra tk đã tồn tại 
-       
-
-
             else
             {
                 SqlConnection con = new SqlConnection("Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False");
@@ -132,11 +121,15 @@ namespace QLMP.Forms
                 SqlCommand cmd1 = new SqlCommand(sql1, con);
                 int count = (int)cmd1.ExecuteScalar();
 
+                // mã hóa mật khẩu
+                string hashedPassword = HashPassword(txt_mk.Text, Encoding.UTF8.GetBytes("salt"));
+                
+
                 string sql;
                 sql = "INSERT INTO TaiKhoan (MaTK,TenTK,MatKhau) VALUES(@MATK,@Username,@Password)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@Username", txt_tk.Text);
-                cmd.Parameters.AddWithValue("@Password", txt_mk.Text);
+                cmd.Parameters.AddWithValue("@Password", hashedPassword.ToString());
                 cmd.Parameters.AddWithValue("@MATK", count + 1);
            //     cmd.Parameters.AddWithValue("@Email", txt_email.Text);
                 cmd.ExecuteNonQuery();
@@ -168,6 +161,23 @@ namespace QLMP.Forms
         {
             if (e.KeyCode == Keys.Enter)
                 SendKeys.Send("{TAB}");
+        }
+
+        private void fillComboxRole()
+        {
+            comboBox1.Items.Add("Quản lý");
+            comboBox1.Items.Add("Nhân viên bán hàng");
+            comboBox1.Items.Add("Nhân viên kho");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_mk_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
