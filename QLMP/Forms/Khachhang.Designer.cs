@@ -58,7 +58,7 @@
             // 
             this.btndong.Location = new System.Drawing.Point(1160, 920);
             this.btndong.Name = "btndong";
-            this.btndong.Size = new System.Drawing.Size(108, 47);
+            this.btndong.Size = new System.Drawing.Size(113, 50);
             this.btndong.TabIndex = 43;
             this.btndong.Text = "Đóng";
             this.btndong.UseVisualStyleBackColor = true;
@@ -293,7 +293,7 @@
             // 
             // Khachhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 856);
             this.Controls.Add(this.btndong);
@@ -308,6 +308,7 @@
             this.Controls.Add(this.btnluu);
             this.Controls.Add(this.btnboqua);
             this.Controls.Add(this.btnthem);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Khachhang";
             this.Text = "Khachhang";
             this.Load += new System.EventHandler(this.Khachhang_Load);

@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QLMP.FORMS;
+using System.Text;
+using QLMP.Class;
 
 namespace QLMP.Forms
 {
@@ -34,8 +36,11 @@ namespace QLMP.Forms
             // Tạo câu lệnh SQL
             string sql = "SELECT * FROM TaiKhoan WHERE TenTk=@Username AND MatKhau=@Password";
             SqlCommand cmd = new SqlCommand(sql, con);
+
+            string hassedPassword = Utils.HashPassword(txt_mk.Text, Encoding.UTF8.GetBytes("salt"));
+
             cmd.Parameters.AddWithValue("@Username", txt_tk.Text);
-            cmd.Parameters.AddWithValue("@Password", txt_mk.Text);
+            cmd.Parameters.AddWithValue("@Password", hassedPassword);
 
             // Lấy bản ghi từ câu lệnh SELECT
             SqlDataReader dta = cmd.ExecuteReader();
@@ -52,7 +57,7 @@ namespace QLMP.Forms
                 }
 
                 // Khởi tạo Home form với role
-                Home h = new Home(role);
+                Main h = new Main(role);
                 h.ShowDialog();
                 this.Hide();
             }

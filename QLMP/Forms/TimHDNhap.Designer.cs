@@ -114,7 +114,7 @@
             this.txtmanhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtmanhanvien.Multiline = true;
             this.txtmanhanvien.Name = "txtmanhanvien";
-            this.txtmanhanvien.Size = new System.Drawing.Size(297, 37);
+            this.txtmanhanvien.Size = new System.Drawing.Size(217, 26);
             this.txtmanhanvien.TabIndex = 28;
             // 
             // txtncc
@@ -134,7 +134,7 @@
             this.txtthang.Margin = new System.Windows.Forms.Padding(4);
             this.txtthang.Multiline = true;
             this.txtthang.Name = "txtthang";
-            this.txtthang.Size = new System.Drawing.Size(61, 37);
+            this.txtthang.Size = new System.Drawing.Size(45, 26);
             this.txtthang.TabIndex = 26;
             this.txtthang.TextChanged += new System.EventHandler(this.txtthang_TextChanged);
             this.txtthang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtthang_KeyPress);
@@ -158,7 +158,7 @@
             this.txtngay.Margin = new System.Windows.Forms.Padding(4);
             this.txtngay.Multiline = true;
             this.txtngay.Name = "txtngay";
-            this.txtngay.Size = new System.Drawing.Size(58, 37);
+            this.txtngay.Size = new System.Drawing.Size(43, 26);
             this.txtngay.TabIndex = 24;
             this.txtngay.TextChanged += new System.EventHandler(this.txtngay_TextChanged);
             this.txtngay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtngay_KeyPress);
@@ -203,7 +203,7 @@
             this.txttongtien.Margin = new System.Windows.Forms.Padding(4);
             this.txttongtien.Multiline = true;
             this.txttongtien.Name = "txttongtien";
-            this.txttongtien.Size = new System.Drawing.Size(297, 37);
+            this.txttongtien.Size = new System.Drawing.Size(217, 26);
             this.txttongtien.TabIndex = 14;
             this.txttongtien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttongtien_KeyPress);
             // 
@@ -214,7 +214,7 @@
             this.txtsohd.Margin = new System.Windows.Forms.Padding(4);
             this.txtsohd.Multiline = true;
             this.txtsohd.Name = "txtsohd";
-            this.txtsohd.Size = new System.Drawing.Size(297, 37);
+            this.txtsohd.Size = new System.Drawing.Size(217, 26);
             this.txtsohd.TabIndex = 11;
             // 
             // label2
@@ -330,7 +330,7 @@
             // 
             // TimHDNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 856);
             this.Controls.Add(this.label3);
@@ -340,6 +340,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TimHDNhap";
             this.Text = "TimHDNhap";
             this.Load += new System.EventHandler(this.TimHDNhap_Load);

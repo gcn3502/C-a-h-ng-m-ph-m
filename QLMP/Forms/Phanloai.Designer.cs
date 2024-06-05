@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.txttimkiem = new System.Windows.Forms.TextBox();
-            this.btnđong = new System.Windows.Forms.Button();
-            this.btnhuy = new System.Windows.Forms.Button();
-            this.btnluu = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
-            this.btnsua = new System.Windows.Forms.Button();
-            this.btnthem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgridphanloai = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -44,6 +38,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btntimkiem = new System.Windows.Forms.Button();
+            this.btnđong = new System.Windows.Forms.Button();
+            this.btnhuy = new System.Windows.Forms.Button();
+            this.btnluu = new System.Windows.Forms.Button();
+            this.btnxoa = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
+            this.btnthem = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridphanloai)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -52,7 +52,7 @@
             // txttimkiem
             // 
             this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttimkiem.Location = new System.Drawing.Point(245, 161);
+            this.txttimkiem.Location = new System.Drawing.Point(341, 158);
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(511, 27);
             this.txttimkiem.TabIndex = 17;
@@ -62,103 +62,13 @@
             this.txttimkiem.MouseEnter += new System.EventHandler(this.txttimkiem_MouseEnter);
             this.txttimkiem.MouseLeave += new System.EventHandler(this.txttimkiem_MouseLeave);
             // 
-            // btnđong
-            // 
-            this.btnđong.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnđong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnđong.ForeColor = System.Drawing.Color.Black;
-            this.btnđong.Image = global::QLMP.Properties.Resources.icons8_close_40;
-            this.btnđong.Location = new System.Drawing.Point(1001, 605);
-            this.btnđong.Name = "btnđong";
-            this.btnđong.Size = new System.Drawing.Size(120, 51);
-            this.btnđong.TabIndex = 19;
-            this.btnđong.Text = " Đóng";
-            this.btnđong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnđong.UseVisualStyleBackColor = false;
-            this.btnđong.Click += new System.EventHandler(this.btnđong_Click);
-            // 
-            // btnhuy
-            // 
-            this.btnhuy.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnhuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhuy.ForeColor = System.Drawing.Color.Black;
-            this.btnhuy.Image = global::QLMP.Properties.Resources.icons8_skip_40;
-            this.btnhuy.Location = new System.Drawing.Point(813, 605);
-            this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(115, 51);
-            this.btnhuy.TabIndex = 18;
-            this.btnhuy.Text = " Hủy";
-            this.btnhuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnhuy.UseVisualStyleBackColor = false;
-            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
-            // 
-            // btnluu
-            // 
-            this.btnluu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnluu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnluu.ForeColor = System.Drawing.Color.Black;
-            this.btnluu.Image = global::QLMP.Properties.Resources.icons8_save_40;
-            this.btnluu.Location = new System.Drawing.Point(631, 605);
-            this.btnluu.Name = "btnluu";
-            this.btnluu.Size = new System.Drawing.Size(125, 51);
-            this.btnluu.TabIndex = 16;
-            this.btnluu.Text = " Lưu";
-            this.btnluu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnluu.UseVisualStyleBackColor = false;
-            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
-            // 
-            // btnxoa
-            // 
-            this.btnxoa.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnxoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoa.ForeColor = System.Drawing.Color.Black;
-            this.btnxoa.Image = global::QLMP.Properties.Resources.icons8_delete_40;
-            this.btnxoa.Location = new System.Drawing.Point(446, 605);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(124, 51);
-            this.btnxoa.TabIndex = 15;
-            this.btnxoa.Text = "  Xóa";
-            this.btnxoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnxoa.UseVisualStyleBackColor = false;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
-            // 
-            // btnsua
-            // 
-            this.btnsua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnsua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsua.ForeColor = System.Drawing.Color.Black;
-            this.btnsua.Image = global::QLMP.Properties.Resources.icons8_fix_40;
-            this.btnsua.Location = new System.Drawing.Point(269, 605);
-            this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(124, 51);
-            this.btnsua.TabIndex = 14;
-            this.btnsua.Text = "  Sửa";
-            this.btnsua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnsua.UseVisualStyleBackColor = false;
-            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
-            // 
-            // btnthem
-            // 
-            this.btnthem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnthem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthem.ForeColor = System.Drawing.Color.Black;
-            this.btnthem.Image = global::QLMP.Properties.Resources.icons8_add_40;
-            this.btnthem.Location = new System.Drawing.Point(77, 605);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(126, 51);
-            this.btnthem.TabIndex = 13;
-            this.btnthem.Text = " Thêm";
-            this.btnthem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnthem.UseVisualStyleBackColor = false;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgridphanloai);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(81, 404);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(995, 172);
+            this.groupBox2.Size = new System.Drawing.Size(995, 295);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách hiển thị";
@@ -171,7 +81,7 @@
             this.dgridphanloai.Name = "dgridphanloai";
             this.dgridphanloai.RowHeadersWidth = 51;
             this.dgridphanloai.RowTemplate.Height = 24;
-            this.dgridphanloai.Size = new System.Drawing.Size(961, 132);
+            this.dgridphanloai.Size = new System.Drawing.Size(961, 233);
             this.dgridphanloai.TabIndex = 0;
             this.dgridphanloai.Click += new System.EventHandler(this.dgridphanloai_Click);
             // 
@@ -234,7 +144,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(382, 45);
+            this.label1.Location = new System.Drawing.Point(382, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(470, 45);
             this.label1.TabIndex = 10;
@@ -246,20 +156,113 @@
             this.btntimkiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntimkiem.ForeColor = System.Drawing.Color.Black;
             this.btntimkiem.Image = global::QLMP.Properties.Resources.icons8_search_40;
+            this.btntimkiem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btntimkiem.Location = new System.Drawing.Point(95, 147);
             this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(136, 48);
+            this.btntimkiem.Size = new System.Drawing.Size(172, 53);
             this.btntimkiem.TabIndex = 20;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btntimkiem.UseVisualStyleBackColor = false;
             this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
+            // btnđong
+            // 
+            this.btnđong.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnđong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnđong.ForeColor = System.Drawing.Color.Black;
+            this.btnđong.Image = global::QLMP.Properties.Resources.icons8_close_40;
+            this.btnđong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnđong.Location = new System.Drawing.Point(984, 728);
+            this.btnđong.Name = "btnđong";
+            this.btnđong.Size = new System.Drawing.Size(128, 51);
+            this.btnđong.TabIndex = 19;
+            this.btnđong.Text = " Đóng";
+            this.btnđong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnđong.UseVisualStyleBackColor = false;
+            this.btnđong.Click += new System.EventHandler(this.btnđong_Click);
+            // 
+            // btnhuy
+            // 
+            this.btnhuy.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnhuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnhuy.ForeColor = System.Drawing.Color.Black;
+            this.btnhuy.Image = global::QLMP.Properties.Resources.icons8_skip_40;
+            this.btnhuy.Location = new System.Drawing.Point(807, 728);
+            this.btnhuy.Name = "btnhuy";
+            this.btnhuy.Size = new System.Drawing.Size(115, 51);
+            this.btnhuy.TabIndex = 18;
+            this.btnhuy.Text = " Hủy";
+            this.btnhuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnhuy.UseVisualStyleBackColor = false;
+            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
+            // 
+            // btnluu
+            // 
+            this.btnluu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnluu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnluu.ForeColor = System.Drawing.Color.Black;
+            this.btnluu.Image = global::QLMP.Properties.Resources.icons8_save_40;
+            this.btnluu.Location = new System.Drawing.Point(625, 728);
+            this.btnluu.Name = "btnluu";
+            this.btnluu.Size = new System.Drawing.Size(125, 51);
+            this.btnluu.TabIndex = 16;
+            this.btnluu.Text = " Lưu";
+            this.btnluu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnluu.UseVisualStyleBackColor = false;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnxoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxoa.ForeColor = System.Drawing.Color.Black;
+            this.btnxoa.Image = global::QLMP.Properties.Resources.icons8_delete_40;
+            this.btnxoa.Location = new System.Drawing.Point(440, 728);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(124, 51);
+            this.btnxoa.TabIndex = 15;
+            this.btnxoa.Text = "  Xóa";
+            this.btnxoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+            // 
+            // btnsua
+            // 
+            this.btnsua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnsua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsua.ForeColor = System.Drawing.Color.Black;
+            this.btnsua.Image = global::QLMP.Properties.Resources.icons8_fix_40;
+            this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnsua.Location = new System.Drawing.Point(263, 728);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.Size = new System.Drawing.Size(124, 51);
+            this.btnsua.TabIndex = 14;
+            this.btnsua.Text = "  Sửa";
+            this.btnsua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnsua.UseVisualStyleBackColor = false;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
+            // 
+            // btnthem
+            // 
+            this.btnthem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnthem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthem.ForeColor = System.Drawing.Color.Black;
+            this.btnthem.Image = global::QLMP.Properties.Resources.icons8_add_40;
+            this.btnthem.Location = new System.Drawing.Point(71, 728);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.Size = new System.Drawing.Size(149, 51);
+            this.btnthem.TabIndex = 13;
+            this.btnthem.Text = "Thêm";
+            this.btnthem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnthem.UseVisualStyleBackColor = false;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+            // 
             // Phanloai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 724);
+            this.ClientSize = new System.Drawing.Size(1147, 872);
             this.Controls.Add(this.txttimkiem);
             this.Controls.Add(this.btntimkiem);
             this.Controls.Add(this.btnđong);

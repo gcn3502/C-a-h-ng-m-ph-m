@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\function.cs" />
+    <Compile Include="Class\Utils.cs" />
     <Compile Include="Forms\Congviec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +114,12 @@
     <Compile Include="Forms\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Nhacungcap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +170,9 @@
     <EmbeddedResource Include="Forms\dnhap.resx">
       <DependentUpon>dnhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Doanhthu.resx">
+      <DependentUpon>Doanhthu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Formhome.resx">
       <DependentUpon>Formhome.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,8 +194,17 @@
     <EmbeddedResource Include="Forms\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Nhacungcap.resx">
+      <DependentUpon>Nhacungcap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Nhanvien.resx">
       <DependentUpon>Nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Phanloai.resx">
+      <DependentUpon>Phanloai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
