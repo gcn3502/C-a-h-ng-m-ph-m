@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLMP.FORMS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -212,6 +213,11 @@ namespace QLMP.Forms
             showSideMenu(0, 1); // hiện
             showSideMenu(0, 2); // k hiện
             showSideMenu(1, 3);
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            openPanelchild(new homme(), sender);
         }
     }
 }
