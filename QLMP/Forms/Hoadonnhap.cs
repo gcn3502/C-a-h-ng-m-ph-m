@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using QLMP.Class;
 using COMExcel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Core;
 
 namespace QLMP.Forms
 {
@@ -31,14 +32,14 @@ namespace QLMP.Forms
             btnin.Enabled = false;
             txthoadon.ReadOnly = true;
             txttennhanvien.ReadOnly = true;
-            txttenncc.ReadOnly = true;  
+            txttenncc.ReadOnly = true;
             txtdiachi.ReadOnly = true;
             mskdienthoai.ReadOnly = true;
             txttenhang.ReadOnly = true;
-            txtdongia.ReadOnly = false;  
+            txtdongia.ReadOnly = false;
             txtthanhtien.ReadOnly = true;
             txttongtien.ReadOnly = true;
-            txtchietkhau.Text = "0";
+            txtchietkhau.Text = "";
             txttongtien.Text = "0";
 
             cbomanhanvien.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -114,23 +115,37 @@ namespace QLMP.Forms
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthem.Enabled = false;
+           // btnimkiem.Enabled = true;
             ResetValues();
             txthoadon.Text = function.CreateKey("HDN");
             LoadDataGridView();
             ResetValuesHang();
+
+            dtngaynhap.Enabled = true;
+            cbomancc.Enabled = true;
+            cbomanhanvien.Enabled  = true;
+            cbomahang.Enabled = true;
+            //cbomanhanvien.SelectedIndex = -1;// xoá nội dung bên trong
+            //cbomancc.SelectedIndex = -1;
+            txtchietkhau.ReadOnly = false;
+            txtdongia.ReadOnly = false;
+            txtsoluong.ReadOnly= false; 
+
         }
 
         private void ResetValues()
         {
             txthoadon.Text = "";
             dtngaynhap.Value = DateTime.Now;
-            cbomanhanvien.Text = "";
-            cbomancc.Text = "";
+            //cbomanhanvien.Text = "";
+            //cbomancc.Text = "";
+            cbomanhanvien.SelectedIndex = -1;// xoá nội dung bên trong
+            cbomancc.SelectedIndex = -1;
             txttongtien.Text = "0";
             lblbangchu.Text = "Bằng chữ: ";
             cbomahang.Text = "";
             txtsoluong.Text = "";
-            txtchietkhau.Text = "0";
+            txtchietkhau.Text = "";
             txtthanhtien.Text = "0";
             txttennhanvien.Text = "";
             txttenncc.Text = "";
@@ -143,14 +158,15 @@ namespace QLMP.Forms
 
         private void ResetValuesHang()
         {
-            cbomahang.Text = "";
+
+            cbomahang.SelectedIndex = -1;
             txtsoluong.Text = "";
-            txtchietkhau.Text = "0";
-            txtthanhtien.Text = "0";
+            txtchietkhau.Text = "";
+            txtthanhtien.Text = "";
 
 
             txttenhang.Text = "";
-            txtdongia.Text = "0";
+            txtdongia.Text = "";
         }
 
         private void btnluu_Click(object sender, EventArgs e)
@@ -237,13 +253,14 @@ namespace QLMP.Forms
             lblbangchu.Text = "Bằng chữ: " + function.Chuyensangchuoi(double.Parse(tongmoi.ToString()));
 
             // cập nhật đơn giá nhập
-            int donGiaNhapMoi = Convert.ToInt32(txtdongia.Text);
+            double donGiaNhapMoi = Convert.ToDouble(txtdongia.Text);
             // Cập nhật đơn giá nhập mới vào bảng hàng
             sql = "UPDATE Hang SET DonGiaNhap = " + donGiaNhapMoi + " WHERE MaHang = N'" + cbomahang.SelectedValue + "'";
             function.RunSql(sql);
 
             ResetValuesHang();
             //btnsua.Enabled = true;
+            //cbomahd.SelectedIndex = -1;
             btnhuy.Enabled = true;
             btnthem.Enabled = true;
             btnin.Enabled = true;
@@ -265,10 +282,11 @@ namespace QLMP.Forms
         private void cbomanhanvien_SelectedIndexChanged(object sender, EventArgs e)
         {
             string str;
-            if (cbomanhanvien.Text == "") {
+            if (cbomanhanvien.Text == "")
+            {
                 txttennhanvien.Text = "";
             }
-            str = "SELECT TenNV FROM NhanVien WHERE MaNV =N'"+cbomanhanvien.SelectedValue+"'";
+            str = "SELECT TenNV FROM NhanVien WHERE MaNV =N'" + cbomanhanvien.SelectedValue + "'";
             txttennhanvien.Text = function.GetFieldValues(str);
         }
 
@@ -294,7 +312,7 @@ namespace QLMP.Forms
         {
             double tt, dg, ck;
             int sl;
-            if(txtsoluong.Text == "")
+            if (txtsoluong.Text == "")
             {
                 sl = 0;
             }
@@ -305,7 +323,7 @@ namespace QLMP.Forms
 
             if (txtchietkhau.Text == "")
             {
-                ck= 0;
+                ck = 0;
             }
             else
             {
@@ -413,10 +431,10 @@ namespace QLMP.Forms
 
         private void btnimkiem_Click(object sender, EventArgs e)
         {
-            if (cbomahd.Text == "")
+            if (btnthem.Enabled == false)
             {
-                MessageBox.Show("Bạn phải chọn một hoá đơn để tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomahd.Focus();
+                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txthoadon.Focus();
                 return;
             }
             txthoadon.Text = cbomahd.Text;
@@ -424,10 +442,24 @@ namespace QLMP.Forms
             LoadDataGridView();
             btnhuy.Enabled = true;
             //btnsua.Enabled = true;
-            btnluu.Enabled = true;
+            btnluu.Enabled = false;
+            btnthem.Enabled = true;
             btnin.Enabled = true;
             ResetValuesHang();
-            cbomahd.SelectedIndex = -1;
+
+
+            
+
+            // khi tìm kiếm thanh mãnv,ncc ẩn, mã hàng, ck, slj, đơn giá ẩn, lưu ẩn
+            cbomancc.Enabled = false;
+            dtngaynhap.Enabled = false;
+            cbomanhanvien.Enabled = false;
+
+            cbomahang.Enabled = false;
+            txtchietkhau.ReadOnly = true;
+            txtsoluong.ReadOnly = true;
+            txtdongia.ReadOnly = true;
+
         }
 
         private void btnhuy_Click(object sender, EventArgs e)
@@ -497,7 +529,7 @@ namespace QLMP.Forms
 
         private void txtchietkhau_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) ||(Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13)|| (Convert.ToInt32(e.KeyChar) == 46))
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13) || (Convert.ToInt32(e.KeyChar) == 46))
             {
                 if ((Convert.ToInt32(e.KeyChar) == 46) && (sender as TextBox).Text.IndexOf('.') > -1)
                 {
@@ -516,12 +548,21 @@ namespace QLMP.Forms
         }
         private void txtdongia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8)|| (Convert.ToInt32(e.KeyChar) == 13))
-                e.Handled = false;
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13) || (Convert.ToInt32(e.KeyChar) == 46))
+            {
+                if ((Convert.ToInt32(e.KeyChar) == 46) && (sender as TextBox).Text.IndexOf('.') > -1)
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+                }
+            }
             else
             {
                 e.Handled = true;
-                MessageBox.Show("Bạn chỉ được nhập số nguyên dương", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chỉ được nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -537,7 +578,7 @@ namespace QLMP.Forms
         }
         private void frmHoaDonNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-           ResetValues();
+            ResetValues();
         }
         private void dgridHDNhap_Click(object sender, EventArgs e)
         {
@@ -560,6 +601,7 @@ namespace QLMP.Forms
             txtchietkhau.Text = dgridHDNhap.CurrentRow.Cells["ChietKhau"].Value.ToString();
             txtthanhtien.Text = dgridHDNhap.CurrentRow.Cells["ThanhTien"].Value.ToString();
             txtdongia.Text = dgridHDNhap.CurrentRow.Cells["DonGiaNhap"].Value.ToString();
+
             //btnsua.Enabled = true;
         }
 
@@ -755,10 +797,20 @@ namespace QLMP.Forms
 
         private void btndong_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi form Hoá đơn nhập hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
+        }
+
+        private void cbomanhanvien_Enter(object sender, EventArgs e)
+        {
+            cbomanhanvien.Text = "";
+        }
+
+        private void dgridHDNhap_ChangeUICues(object sender, UICuesEventArgs e)
+        {
+
         }
     }
 }

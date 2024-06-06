@@ -23,16 +23,8 @@ namespace QLMP.Forms
         private void Congviec_Load(object sender, EventArgs e)
         {
             function.Connect();
-            txttimkiem.Text = "Nhập từ khóa tìm kiếm";
-            txttimkiem.ForeColor = System.Drawing.Color.Gray;
-            txttencv.KeyPress += new KeyPressEventHandler(txttencv_KeyPress);
-            txtmucluong.KeyPress += new KeyPressEventHandler(txtmucluong_KeyPress);
-            txtmucluong.TextChanged += new EventHandler(txtmucluong_TextChanged);
-            //btntimkiem.Enter += new EventHandler(btntimkiem_Enter);
-            //btntimkiem.Leave += new EventHandler(btntimkiem_Leave);
-            txttimkiem.Enter += new EventHandler(txttimkiem_Enter);
-            txttimkiem.Leave += new EventHandler(txttimkiem_Leave);
-
+            //txttimkiem.Text = "Nhập từ khóa tìm kiếm";
+            //txttimkiem.ForeColor = System.Drawing.Color.Gray;
             txtmacv.Enabled = false;
             //txttencv.Enabled = false;
             //txtmota.Enabled = false;
@@ -162,7 +154,7 @@ namespace QLMP.Forms
             //    return;
             //}
 
-            sql = "UPDATE CongViec SET TenCV=N'" + txttencv.Text.Trim() + "',MucLuong=N'" + txtmucluong.Text.Trim() + "',MoTa=N'" + txtmota.Text.Trim() + "' WHERE MaCV=N'" + txtmacv.Text + "'";
+            sql = "UPDATE CongViec SET TenCV=N'"+txttencv.Text.Trim()+"',MucLuong=N'"+txtmucluong.Text.Trim()+"',MoTa=N'"+txtmota.Text.Trim()+"' WHERE MaCV=N'" + txtmacv.Text + "'";
 
             function.RunSql(sql);
             load_datagrid();
@@ -211,7 +203,7 @@ namespace QLMP.Forms
             //    return;
             //}
 
-            sql = "UPDATE CongViec SET TenCV=N'" + txttencv.Text.Trim().ToString() + "',MucLuong=N'" + txtmucluong.Text.Trim().ToString() + "',MoTa=N'" + txtmota.Text.Trim().ToString() + "' WHERE MaCV=N'" + txtmacv.Text + "'";
+            sql = "UPDATE CongViec SET TenCV=N'"+txttencv.Text.Trim().ToString()+"',MucLuong=N'"+txtmucluong.Text.Trim().ToString()+"',MoTa=N'"+txtmota.Text.Trim().ToString()+"' WHERE MaCV=N'"+txtmacv.Text+"'";
             function.RunSql(sql);
             load_datagrid();
             ResetValues();
@@ -247,7 +239,7 @@ namespace QLMP.Forms
 
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                sql = "DELETE FROM CongViec WHERE MaCV=N'" + txtmacv.Text.Trim() + "'";
+                sql = "DELETE FROM CongViec WHERE MaCV=N'"+txtmacv.Text.Trim()+"'";
                 function.RunSql(sql);
                 load_datagrid();
                 ResetValues();
@@ -330,10 +322,10 @@ namespace QLMP.Forms
 
         private void txttimkiem_Enter(object sender, EventArgs e)
         {
-            if (txttimkiem.Text == "Nhập từ khóa tìm kiếm.....")
+            if (txttimkiem.Text == "Nhập từ khoá tìm kiếm...")
             {
                 txttimkiem.Text = "";
-                txttimkiem.ForeColor = System.Drawing.Color.Black;
+                txttimkiem.ForeColor = Color.Black;
             }
         }
 
@@ -341,15 +333,24 @@ namespace QLMP.Forms
         {
             if (string.IsNullOrWhiteSpace(txttimkiem.Text))
             {
-                txttimkiem.Text = "Nhập từ khóa tìm kiếm.....";
-                txttimkiem.ForeColor = System.Drawing.Color.Gray;
+                txttimkiem.Text = "Nhập từ khoá tìm kiếm...";
+                txttimkiem.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txttimkiem_Click(object sender, EventArgs e)
+        {
+            if (txttimkiem.Text == "Nhập từ khoá tìm kiếm...")
+            {
+                txttimkiem.Text = "";
+                txttimkiem.ForeColor = Color.Black;
             }
         }
 
         private void txttencv_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Kiểm tra xem ký tự có phải là chữ cái không (bao gồm cả chữ hoa và chữ thường)
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
                 // Hủy bỏ ký tự không hợp lệ
                 e.Handled = true;
@@ -390,5 +391,7 @@ namespace QLMP.Forms
             MessageBox.Show("Bạn có chắc chắn muốn thoát không???", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             Application.Exit();
         }
+
+        
     }
 }

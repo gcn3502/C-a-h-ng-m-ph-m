@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\function.cs" />
+    <Compile Include="Class\Utils.cs" />
     <Compile Include="Forms\Congviec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,11 +309,17 @@
     <None Include="Resources\icons8-fix-30.png" />
     <None Include="Resources\icons8-fix-16.png" />
     <None Include="Resources\icons8-close-20 %281%291.png" />
+<<<<<<< HEAD
     <None Include="Resources\invoice.png" />
     <None Include="Resources\investment.png" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\logout %281%29.png" />
     <None Include="Resources\logout1.png" />
+=======
+    <None Include="Resources\icons8-skip-20.png" />
+    <None Include="Resources\icons8-skip-201.png" />
+    <None Include="Resources\icons8-skip-202.png" />
+>>>>>>> refs/remotes/origin/main
     <Content Include="Resources\menu.jpg" />
     <Content Include="Resources\mypham3.jpg" />
     <None Include="Resources\next.png" />

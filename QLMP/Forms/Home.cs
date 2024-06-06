@@ -222,7 +222,7 @@ namespace QLMP.FORMS
 
         private void btn_Ncc_Click_1(object sender, EventArgs e)
         {
-            openPanelchild(new Nhacungcap(), sender);
+            openPanelchild(new NhaCungCap(), sender);
         }
 
         private void btn_kh_Click_1(object sender, EventArgs e)

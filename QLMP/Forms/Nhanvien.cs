@@ -32,10 +32,10 @@ namespace QLMP.Forms
             btnboqua.Size = new Size(90, 30);
 
             DatThuocTinhChoNnut(btnthem, Properties.Resources.add_icon);
-            DatThuocTinhChoNnut(btnxoa, Properties.Resources.huy_icon);
-            DatThuocTinhChoNnut(btnluu, Properties.Resources.luu_icon);
+            DatThuocTinhChoNnut(btnxoa, Properties.Resources.icons8_delete_20);
+            DatThuocTinhChoNnut(btnluu, Properties.Resources.icons8_save_16);
             DatThuocTinhChoNnut(btnsua, Properties.Resources.sua_icon);
-            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.timkiem_icon);
+            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.icons8_search_20);
             DatThuocTinhChoNnut(btnboqua, Properties.Resources.boqua_icon);
             DatThuocTinhChoNnut(btndong, Properties.Resources.dong_icon);
             btnluu.Enabled = false;
@@ -138,14 +138,14 @@ namespace QLMP.Forms
             dgridnhanvien.Columns[6].HeaderText = "SDT";
             dgridnhanvien.Columns[7].HeaderText = "Mã công việc";
             dgridnhanvien.Columns[8].HeaderText = "Tài khoản";
-            dgridnhanvien.Columns[0].Width = 100;
-            dgridnhanvien.Columns[1].Width = 140;
-            dgridnhanvien.Columns[2].Width = 80;
-            dgridnhanvien.Columns[3].Width = 80;
-            dgridnhanvien.Columns[4].Width = 100;
+            dgridnhanvien.Columns[0].Width = 120;
+            dgridnhanvien.Columns[1].Width = 120;
+            dgridnhanvien.Columns[2].Width = 90;
+            dgridnhanvien.Columns[3].Width = 100;
+            dgridnhanvien.Columns[4].Width = 130;
             dgridnhanvien.Columns[5].Width = 100;
             dgridnhanvien.Columns[6].Width = 100;
-            dgridnhanvien.Columns[7].Width = 80;
+            dgridnhanvien.Columns[7].Width = 120;
             dgridnhanvien.Columns[8].Width = 100;
             dgridnhanvien.AllowUserToAddRows = false;
             dgridnhanvien.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -569,6 +569,116 @@ namespace QLMP.Forms
         {
             if (e.KeyCode == Keys.Enter)
                 btntimkiem_Click(sender, e);
+        }
+
+        private void grpgioitinh_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txttimkiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txttennhanvien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtmanv_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtanh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgridnhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtdiachi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mskngaysinh_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mskdienthoai_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mskngayvaolam_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void cbotaikhoan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbocongviec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblngaysinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblngayvaolam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbldiachi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbldienthoai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblcongviec_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltaikhoan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picanh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gplnhanvien_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
         }
     }
 }

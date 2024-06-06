@@ -1,5 +1,8 @@
-﻿using System;
+﻿using QLMP.Class;
+using System;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
@@ -49,23 +52,6 @@ namespace QLMP.Forms
                 txt_tk.Focus();
                 return;
             }
-            //if (txt_email.Text == "")
-            //{
-            //    MessageBox.Show("Vui lòng nhập Email", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            //    txt_email.Focus();
-            //    return;
-            //}
-            //// ktra email hợp lệ?
-            //string email = txt_email.Text;
-            //bool isValid = IsValidEmail(email);
-
-            //if (!isValid)
-            //{
-            //    MessageBox.Show("Email không hợp lệ!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            //    txt_email.Text = " ";
-            //    return;
-            //}
-            //
             if (txt_mk.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
@@ -87,28 +73,9 @@ namespace QLMP.Forms
                 txt_xacnhan.Text = " ";
                 return;
             }
-
-
-
-            // mk >8 ký tự tên > 6 ktu
-            //if(txt_mk.Text.Length <8 )
-            //  {
-            //      MessageBox.Show("Mật khẩu phải lớn hơn 8 ký tự", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            //      return;
-            //  }
-            //if(txt_tk.Text.Length < 6)
-            //  {
-            //      MessageBox.Show("Tên tài khoản phải lớn hơn 6 ký tự", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            //      return;
-            //  }
-
-        //// ktra tk đã tồn tại 
-       
-
-
             else
             {
-                SqlConnection con = new SqlConnection("Data Source=LAPTOP-59G1UB6L\\LANANH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False");
+                SqlConnection con = new SqlConnection("Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False");
                 con.Open();
 
                 //check tk đã tồn tại chưa
@@ -132,20 +99,30 @@ namespace QLMP.Forms
                 SqlCommand cmd1 = new SqlCommand(sql1, con);
                 int count = (int)cmd1.ExecuteScalar();
 
-                string sql;
-                sql = "INSERT INTO TaiKhoan (MaTK,TenTK,MatKhau) VALUES(@MATK,@Username,@Password)";
+                // mã hóa mật khẩu
+                string hashedPassword =  Utils.HashPassword(txt_mk.Text, Encoding.UTF8.GetBytes("salt"));
+
+                con.Close();
+                
+
+                string sql = "INSERT INTO TaiKhoan (MaTK, TenTK, MatKhau, PhanQuyen) VALUES (@MaTK, @TenTK, @MatKhau, @Role)";
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@Username", txt_tk.Text);
-                cmd.Parameters.AddWithValue("@Password", txt_mk.Text);
-                cmd.Parameters.AddWithValue("@MATK", count + 1);
-           //     cmd.Parameters.AddWithValue("@Email", txt_email.Text);
+                con.Open();
+                cmd.Parameters.AddWithValue("@MaTK", count + 1);
+                cmd.Parameters.AddWithValue("@TenTK", txt_tk.Text);
+                cmd.Parameters.AddWithValue("@MatKhau", hashedPassword);
+                cmd.Parameters.AddWithValue("@Role", 1);
+                foreach (SqlParameter param in cmd.Parameters)
+                {
+                    Console.WriteLine($"{param.ParameterName}: {param.Value} (Type: {param.SqlDbType})");
+                }
+                Console.WriteLine("sql string", cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                con.Close();
                 this.Hide();
                 login dnhap = new login();
-                dnhap.ShowDialog();
-                
-                return;
+                dnhap.Show();
             }
         }
 
@@ -155,6 +132,9 @@ namespace QLMP.Forms
             txt_mk.Focus();
        //     txt_email.Focus();
             txt_xacnhan.Focus();
+
+            // fill combobox
+            fillComboxRole();
 
         }
 
@@ -168,6 +148,25 @@ namespace QLMP.Forms
         {
             if (e.KeyCode == Keys.Enter)
                 SendKeys.Send("{TAB}");
+        }
+
+        private void fillComboxRole()
+        {
+            // seed data
+            comboBox1.Items.Add("Quản lý");
+            comboBox1.Items.Add("Nhân viên kho");
+            comboBox1.Items.Add("Nhân viên bán hàng");
+            comboBox1.SelectedIndex = 0;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_mk_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

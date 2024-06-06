@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QLMP.FORMS;
+using System.Text;
+using QLMP.Class;
 
 namespace QLMP.Forms
 {
@@ -28,20 +30,27 @@ namespace QLMP.Forms
         private void btn_login_Click(object sender, EventArgs e)
         {
             // Tạo kết nối SQL
-            SqlConnection con = new SqlConnection("Data Source=LAPTOP-59G1UB6L\\LANANH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False");
             con.Open();
 
             // Tạo câu lệnh SQL
             string sql = "SELECT * FROM TaiKhoan WHERE TenTk=@Username AND MatKhau=@Password";
             SqlCommand cmd = new SqlCommand(sql, con);
+
+            string hassedPassword = Utils.HashPassword(txt_mk.Text, Encoding.UTF8.GetBytes("salt"));
+
             cmd.Parameters.AddWithValue("@Username", txt_tk.Text);
-            cmd.Parameters.AddWithValue("@Password", txt_mk.Text);
+            cmd.Parameters.AddWithValue("@Password", hassedPassword);
 
             // Lấy bản ghi từ câu lệnh SELECT
             SqlDataReader dta = cmd.ExecuteReader();
 
             if (dta.Read())
             {
+                User user = User.Instance;
+                user.username = txt_tk.Text;
+                user.password = txt_mk.Text;
+
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                 // Lấy column role từ bảng Tài Khoản một cách an toàn
@@ -49,6 +58,7 @@ namespace QLMP.Forms
                 if (dta["role"] != DBNull.Value)
                 {
                     role = Convert.ToInt32(dta["role"]);
+                    user.role = role.ToString();
                 }
 
                 // Khởi tạo Home form với role
