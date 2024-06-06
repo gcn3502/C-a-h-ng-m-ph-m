@@ -72,7 +72,7 @@
             this.lblmahoadon = new System.Windows.Forms.Label();
             this.lblHDBanHang = new System.Windows.Forms.Label();
             this.grpttmh = new System.Windows.Forms.GroupBox();
-            this.btnboqua = new System.Windows.Forms.Button();
+            //this.btnboqua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgridhoadonban)).BeginInit();
             this.grpttchung.SuspendLayout();
             this.grpttmh.SuspendLayout();
@@ -80,16 +80,16 @@
             // 
             // btnboqua
             // 
-            this.btnboqua.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnboqua.Location = new System.Drawing.Point(831, 828);
-            this.btnboqua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnboqua.Name = "btnboqua";
-            this.btnboqua.Size = new System.Drawing.Size(135, 54);
-            this.btnboqua.TabIndex = 36;
-            this.btnboqua.Text = "Bỏ qua";
-            this.btnboqua.UseVisualStyleBackColor = true;
-            this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
-            // 
+            //this.btnboqua.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.btnboqua.Location = new System.Drawing.Point(831, 828);
+            //this.btnboqua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            //this.btnboqua.Name = "btnboqua";
+            //this.btnboqua.Size = new System.Drawing.Size(135, 54);
+            //this.btnboqua.TabIndex = 36;
+            //this.btnboqua.Text = "Bỏ qua";
+            //this.btnboqua.UseVisualStyleBackColor = true;
+            //this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
+            //// 
             // cbomahoadon
             // 
             this.cbomahoadon.FormattingEnabled = true;
@@ -567,22 +567,22 @@
             // 
             // btnboqua
             // 
-            this.btnboqua.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnboqua.Location = new System.Drawing.Point(1107, 1210);
-            this.btnboqua.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnboqua.Name = "btnboqua";
-            this.btnboqua.Size = new System.Drawing.Size(165, 64);
-            this.btnboqua.TabIndex = 36;
-            this.btnboqua.Text = "Bỏ qua";
-            this.btnboqua.UseVisualStyleBackColor = true;
-            this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
+            //this.btnboqua.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.btnboqua.Location = new System.Drawing.Point(1107, 1210);
+            //this.btnboqua.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            //this.btnboqua.Name = "btnboqua";
+            //this.btnboqua.Size = new System.Drawing.Size(165, 64);
+            //this.btnboqua.TabIndex = 36;
+            //this.btnboqua.Text = "Bỏ qua";
+            //this.btnboqua.UseVisualStyleBackColor = true;
+            //this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
             // 
             // Hoadonban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 913);
-            this.Controls.Add(this.btnboqua);
+            //this.Controls.Add(this.btnboqua);
             this.Controls.Add(this.grpttchung);
             this.Controls.Add(this.lblHDBanHang);
             this.Controls.Add(this.grpttmh);

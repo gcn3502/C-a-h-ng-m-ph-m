@@ -34,14 +34,14 @@ namespace QLMP.Forms
             btnin.Size = new Size(100, 30);
             btntimkiem.Size = new Size(100, 30);
             btndong.Size = new Size(80, 30);
-            btnboqua.Size = new Size(90, 30);
+            //btnboqua.Size = new Size(90, 30);
 
             DatThuocTinhChoNnut(btnthem, Properties.Resources.add_icon);
             DatThuocTinhChoNnut(btnhuy, Properties.Resources.icons8_delete_20);
             DatThuocTinhChoNnut(btnluu, Properties.Resources.luu_icon);
             DatThuocTinhChoNnut(btnin, Properties.Resources.icons8_print_18);
             DatThuocTinhChoNnut(btntimkiem, Properties.Resources.icons8_search_20);
-            DatThuocTinhChoNnut(btnboqua, Properties.Resources.boqua_icon);
+            //DatThuocTinhChoNnut(btnboqua, Properties.Resources.boqua_icon);
             DatThuocTinhChoNnut(btndong, Properties.Resources.dong_icon);
 
             btnthem.Enabled = true;
@@ -227,7 +227,7 @@ namespace QLMP.Forms
             btnin.Enabled = true;
             btnhuy.Enabled = true;
             btndong.Enabled = true;
-            btnboqua.Enabled = true;
+            //btnboqua.Enabled = true;
         }
         private void Load_ThongtinHD()
         {
@@ -253,7 +253,7 @@ namespace QLMP.Forms
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthem.Enabled = false;
-            btnboqua.Enabled = true;
+            //btnboqua.Enabled = true;
             ResetValues();
             txtmahoadon.Text = function.CreateKey("HDB");
             Load_DataGridViewChitiet();
@@ -697,7 +697,7 @@ namespace QLMP.Forms
 
         private void btnboqua_Click(object sender, EventArgs e)
         {
-            btnboqua.Enabled = false;
+            //btnboqua.Enabled = false;
             btnthem.Enabled = true;
             btnhuy.Enabled = true;
             btnluu.Enabled = false;

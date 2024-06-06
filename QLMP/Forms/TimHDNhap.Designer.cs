@@ -136,8 +136,8 @@
             this.txtthang.Name = "txtthang";
             this.txtthang.Size = new System.Drawing.Size(60, 37);
             this.txtthang.TabIndex = 26;
-            this.txtthang.TextChanged += new System.EventHandler(this.txtthang_TextChanged);
-            this.txtthang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtthang_KeyPress);
+            //this.txtthang.TextChanged += new System.EventHandler(this.txtthang_TextChanged);
+            //this.txtthang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtthang_KeyPress);
             // 
             // txtnam
             // 
@@ -148,8 +148,8 @@
             this.txtnam.Name = "txtnam";
             this.txtnam.Size = new System.Drawing.Size(119, 37);
             this.txtnam.TabIndex = 25;
-            this.txtnam.TextChanged += new System.EventHandler(this.txtnam_TextChanged);
-            this.txtnam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnam_KeyPress);
+            //this.txtnam.TextChanged += new System.EventHandler(this.txtnam_TextChanged);
+            //this.txtnam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnam_KeyPress);
             // 
             // txtngay
             // 
@@ -160,8 +160,8 @@
             this.txtngay.Name = "txtngay";
             this.txtngay.Size = new System.Drawing.Size(58, 37);
             this.txtngay.TabIndex = 24;
-            this.txtngay.TextChanged += new System.EventHandler(this.txtngay_TextChanged);
-            this.txtngay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtngay_KeyPress);
+            //this.txtngay.TextChanged += new System.EventHandler(this.txtngay_TextChanged);
+            //this.txtngay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtngay_KeyPress);
             // 
             // lblthang
             // 
@@ -205,7 +205,7 @@
             this.txttongtien.Name = "txttongtien";
             this.txttongtien.Size = new System.Drawing.Size(286, 37);
             this.txttongtien.TabIndex = 14;
-            this.txttongtien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttongtien_KeyPress);
+            //this.txttongtien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttongtien_KeyPress);
             // 
             // txtsohd
             // 
@@ -297,7 +297,7 @@
             this.btndong.Text = "  Đóng";
             this.btndong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btndong.UseVisualStyleBackColor = true;
-            this.btndong.Click += new System.EventHandler(this.btndong_Click);
+            //this.btndong.Click += new System.EventHandler(this.btndong_Click);
             // 
             // btntimlai
             // 
@@ -327,7 +327,7 @@
             this.btntimkiem.Text = "  Tìm kiếm";
             this.btntimkiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btntimkiem.UseVisualStyleBackColor = true;
-            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
+            //this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // TimHDNhap
             // 
