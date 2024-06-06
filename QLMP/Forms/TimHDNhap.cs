@@ -34,7 +34,7 @@ namespace QLMP.Forms
 
         }
 
-        private void btntimkiem_Click_1(object sender, EventArgs e)
+        private void btntimkiem_Click(object sender, EventArgs e)
         {
             string sql;
             if ((txtsohd.Text == "") && (txtngay.Text == "") && (txtthang.Text == "") && (txtnam.Text == "") &&
@@ -111,5 +111,7 @@ namespace QLMP.Forms
                 frm.ShowDialog();
             }
         }
+
+        
     }
 }

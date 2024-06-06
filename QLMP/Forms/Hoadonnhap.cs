@@ -705,13 +705,13 @@ namespace QLMP.Forms
             exRange.Range["B1:B1"].ColumnWidth = 15;
             exRange.Range["A1:B1"].MergeCells = true;
             exRange.Range["A1:B1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["A1:B1"].Value = "Shop kem trộn";
+            exRange.Range["A1:B1"].Value = "Cửa hàng mỹ phẩm Sami";
             exRange.Range["A2:B2"].MergeCells = true;
             exRange.Range["A2:B2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["A2:B2"].Value = "Thanh Xuân - Hà Nội";
+            exRange.Range["A2:B2"].Value = "127 Chùa Bộc, Qunag Trung, Đống Đa, Hà Nội";
             exRange.Range["A3:B3"].MergeCells = true;
             exRange.Range["A3:B3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["A3:B3"].Value = "Điện thoại: (038)8555999";
+            exRange.Range["A3:B3"].Value = "Điện thoại: (098)7699999";
             exRange.Range["C2:E2"].Font.Size = 16;
             exRange.Range["C2:E2"].Font.Bold = true;
             exRange.Range["C2:E2"].Font.ColorIndex = 3; //Màu đỏ
