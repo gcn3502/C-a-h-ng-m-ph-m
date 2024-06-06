@@ -18,11 +18,13 @@ namespace QLMP.Forms
 {
     public partial class Hoadonban : Form
     {
+       
         public Hoadonban()
         {
             InitializeComponent();
+            
         }
-
+        private bool isInvalidInputShown = false;
         private void Hoadonban_Load(object sender, EventArgs e)
         {
             function.Connect();
@@ -35,10 +37,10 @@ namespace QLMP.Forms
             btnboqua.Size = new Size(90, 30);
 
             DatThuocTinhChoNnut(btnthem, Properties.Resources.add_icon);
-            DatThuocTinhChoNnut(btnhuy, Properties.Resources.huy_icon);
+            DatThuocTinhChoNnut(btnhuy, Properties.Resources.icons8_delete_20);
             DatThuocTinhChoNnut(btnluu, Properties.Resources.luu_icon);
-            DatThuocTinhChoNnut(btnin, Properties.Resources.in_icon);
-            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.timkiem_icon);
+            DatThuocTinhChoNnut(btnin, Properties.Resources.icons8_print_18);
+            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.icons8_search_20);
             DatThuocTinhChoNnut(btnboqua, Properties.Resources.boqua_icon);
             DatThuocTinhChoNnut(btndong, Properties.Resources.dong_icon);
 
@@ -59,11 +61,11 @@ namespace QLMP.Forms
             txttongtien.Text = "0";
             function.Fillcombo("SELECT MaKH, TenKH FROM KhachHang", cbomakhachhang, "MaKH", "TenKH");
             cbomakhachhang.SelectedIndex = -1;
-            function.Fillcombo("SELECT MaNV, TenNV FROM NhanVien", cbomanhanvien, "MaNV", "TenNV");
+            function.Fillcombo("SELECT MaNV, TenNV FROM NhanVien", cbomanhanvien, "MaNV", "MaNV");
             cbomanhanvien.SelectedIndex = -1;
-            function.Fillcombo("SELECT MaHang, TenHang FROM Hang", cbomahang, "MaHang", "TenHang");
+            function.Fillcombo("SELECT MaHang, TenHang FROM Hang", cbomahang, "MaHang", "MaHang");
             cbomahang.SelectedIndex = -1;
-            function.Fillcombo("SELECT SoHDB FROM CTHDBan", cbomahoadon, "Mahdban", "Mahdban");
+            function.Fillcombo("SELECT SoHDB, SoHDB FROM CTHDBan", cbomahoadon, "SoHDB", "SoHDB");
             cbomahoadon.SelectedIndex = -1;
 
             if (txtmahoadon.Text != "")
@@ -106,13 +108,11 @@ namespace QLMP.Forms
 
             return anhthaydoi;
         }
-        private bool isInvalidInputShown = false;
-
         DataTable tblCTHDB;
         private void Load_DataGridViewChitiet()
         {
             string sql;
-            sql = "SELECT a.SoHDb, b.MaHang, b.TenHang, a.SoLuong, b.DonGiaBan, a.ChietKhau, a.ThanhTien FROM CTHDBan AS a JOIN Hang AS b ON  a.MaHang=b.MaHang";
+            sql = "SELECT a.SoHDB, b.MaHang, b.TenHang, a.SoLuong, b.DonGiaBan, a.ChietKhau, a.ThanhTien FROM CTHDBan AS a JOIN Hang AS b ON  a.MaHang=b.MaHang";
             tblCTHDB = function.GetDataToTable(sql);
             dgridhoadonban.DataSource = tblCTHDB;
             dgridhoadonban.Columns[0].HeaderText = "Mã hóa đơn";
@@ -138,6 +138,7 @@ namespace QLMP.Forms
 
             ResetValues();
         }
+        public string MaHoaDon { get; set; }
 
         private void dgridhoadonban_Click(object sender, EventArgs e)
         {
@@ -155,9 +156,17 @@ namespace QLMP.Forms
             }
 
             txtmahoadon.Text = dgridhoadonban.CurrentRow.Cells["SoHDB"].Value.ToString();
-            string ngayban = "SELECT NgayBan FROM HDBan WHERE SoHDB = '" + txtmahoadon.Text + "'";
-            string ngayBan = function.GetFieldValues(ngayban);
-            mskngayban.Text = ngayBan;
+            string ngaybanQuery = "SELECT NgayBan FROM HDBan WHERE SoHDB = '" + txtmahoadon.Text + "'";
+            string ngayBanString = function.GetFieldValues(ngaybanQuery);
+            if (DateTime.TryParse(ngayBanString, out DateTime ngayBanDateTime))
+            {
+                dtngayban.Value = ngayBanDateTime;
+            }
+            else
+            {
+                MessageBox.Show("Không thể chuyển đổi giá trị ngày bán.");
+            }
+
 
             string manv = "SELECT MaNV FROM HDBan WHERE  SoHDB = '" + txtmahoadon.Text + "'";
             string maNV = function.GetFieldValues(manv);
@@ -222,9 +231,10 @@ namespace QLMP.Forms
         }
         private void Load_ThongtinHD()
         {
+            
             string str;
             str = "SELECT NgayBan FROM HDBan WHERE MaHDBan = N'" + txtmahoadon.Text + "'";
-            mskngayban.Text = function.ConvertDateTime(function.GetFieldValues(str));
+            dtngayban.Value = DateTime.Parse(function.GetFieldValues(str));
             str = "SELECT MaNV FROM HDBan WHERE MaHDBan = N'" + txtmahoadon.Text + "'";
             cbomanhanvien.Text = function.GetFieldValues(str);
 
@@ -251,7 +261,7 @@ namespace QLMP.Forms
         private void ResetValues()
         {
             txtmahoadon.Text = "";
-            mskngayban.Text = DateTime.Now.ToShortDateString();
+            dtngayban.Value = DateTime.Now;
             cbomanhanvien.Text = "";
             txttennhanvien.Text = "";
             cbomakhachhang.Text = "";
@@ -269,7 +279,7 @@ namespace QLMP.Forms
         {
             cbomahang.Text = "";
             txttenhang.Text = "";
-            //txtdongia.Text = "0";
+            txtdongia.Text = "0";
             txtsoluong.Text = "";
             txtchietkhau.Text = "";
             txtthanhtien.Text = "0";
@@ -300,7 +310,7 @@ namespace QLMP.Forms
 
             if (!isHDBanExists)
             {
-                sql = "INSERT INTO HDBan(SoHDB, NgayBan, MaNV, MaKH, TongTien) VALUES(N'" + txtmahoadon.Text.Trim() + "', '" + function.ConvertDateTime(mskngayban.Text.Trim()) + "',N'" + cbomanhanvien.SelectedValue + "',N'" + cbomakhachhang.SelectedValue + "', 0)";
+                sql = "INSERT INTO HDBan(SoHDB, NgayBan, MaNV, MaKH, TongTien) VALUES(N'" + txtmahoadon.Text.Trim() + "', '" + function.ConvertDateTime(dtngayban.Text.Trim()) + "',N'" + cbomanhanvien.SelectedValue + "',N'" + cbomakhachhang.SelectedValue + "', 0)";
                 function.RunSql(sql);
             }
 
@@ -358,13 +368,13 @@ namespace QLMP.Forms
             txttongtien.Text = tongmoi.ToString();
             txtbangchu.Text = function.ChuyenSoSangChu(tongmoi.ToString());
 
-      
+
             ResetValuesHang();
 
             btnhuy.Enabled = true;
             btnthem.Enabled = true;
             btnin.Enabled = true;
-        
+
         }
 
         private void dgridhoadonban_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -487,6 +497,7 @@ namespace QLMP.Forms
 
             str = "SELECT TenHang FROM Hang WHERE MaHang =N'" + cbomahang.SelectedValue + "'";
             txttenhang.Text = function.GetFieldValues(str);
+
             string updatedongiamoi = "UPDATE Hang SET DonGiaBan = ROUND(DonGiaNhap * 1.10,0) WHERE MaHang = N'" + cbomahang.SelectedValue + "'";
             function.ExecuteQuery(updatedongiamoi);
             string selectdongiamoi = "SELECT DonGiaBan FROM Hang WHERE MaHang = N'" + cbomahang.SelectedValue + "'";

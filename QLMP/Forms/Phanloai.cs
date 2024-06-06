@@ -21,13 +21,6 @@ namespace QLMP.Forms
         DataTable tblpl;
         private void Phanloai_Load(object sender, EventArgs e)
         {
-            txttimkiem.Text = "Nhập từ khóa tìm kiếm";
-            txttimkiem.ForeColor = System.Drawing.Color.Gray;
-            txttenloai.KeyPress += new KeyPressEventHandler(txttenloai_KeyPress);
-            txttimkiem.Enter += new EventHandler(txttimkiem_Enter);
-            txttimkiem.Leave += new EventHandler(txttimkiem_Leave);
-            txttimkiem.MouseEnter += new EventHandler(txttimkiem_MouseEnter);
-            txttimkiem.MouseLeave += new EventHandler(txttimkiem_MouseLeave);
             function.Connect();
             txtmaloai.Enabled = false;
             btnluu.Enabled = false;
@@ -268,10 +261,19 @@ namespace QLMP.Forms
             }
         }
 
+        private void txttimkiem_Click(object sender, EventArgs e)
+        {
+            if (txttimkiem.Text == "Nhập từ khoá tìm kiếm...")
+            {
+                txttimkiem.Text = "";
+                txttimkiem.ForeColor = Color.Black;
+            }
+        }
+
         private void txttenloai_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Kiểm tra xem ký tự có phải là chữ cái không (bao gồm cả chữ hoa và chữ thường)
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
                 // Hủy bỏ ký tự không hợp lệ
                 e.Handled = true;
@@ -302,5 +304,7 @@ namespace QLMP.Forms
             MessageBox.Show("Bạn có chắc chắn muốn thoát không???", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             Application.Exit();
         }
+
+        
     }
 }

@@ -29,6 +29,52 @@ namespace QLMP.Forms
         {
             ResetValues();
             dgridtkhdb.DataSource = null;
+            btntimkiem.Size = new Size(100, 40);
+            btndong.Size = new Size(95, 40);
+            btntimlai.Size = new Size(100, 40);
+
+            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.icons8_search_20);
+            DatThuocTinhChoNnut(btntimlai, Properties.Resources.icons8_return_40);
+            DatThuocTinhChoNnut(btndong, Properties.Resources.dong_icon);
+
+            // Thực hiện tìm kiếm nếu có mã hóa đơn
+            if (!string.IsNullOrEmpty(mahoadon))
+            {
+                txtmahd.Text = mahoadon;
+                btntimkiem_Click(sender, e);
+
+            }
+        }
+        private void DatThuocTinhChoNnut(Button button, Image image)
+        {
+            button.Image = ResizeImage(image, 20, 20);
+            button.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button.ImageAlign = ContentAlignment.MiddleLeft;
+            button.TextAlign = ContentAlignment.MiddleRight;
+        }
+        private Image ResizeImage(Image image, int width, int height)
+        {
+            var anhgoc = new Rectangle(0, 0, width, height);
+            var anhthaydoi = new Bitmap(width, height);
+
+            anhthaydoi.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var veanh = Graphics.FromImage(anhthaydoi))
+            {
+                veanh.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                veanh.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                veanh.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                veanh.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                veanh.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new System.Drawing.Imaging.ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(System.Drawing.Drawing2D.WrapMode.TileFlipXY);
+                    veanh.DrawImage(image, anhgoc, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return anhthaydoi;
         }
 
         private void ResetValues()
@@ -91,11 +137,11 @@ namespace QLMP.Forms
             dgridtkhdb.Columns[2].HeaderText = "Ngày bán";
             dgridtkhdb.Columns[3].HeaderText = "Mã khách";
             dgridtkhdb.Columns[4].HeaderText = "Tổng tiền";
-            dgridtkhdb.Columns[0].Width = 150;
-            dgridtkhdb.Columns[1].Width = 100;
-            dgridtkhdb.Columns[2].Width = 80;
-            dgridtkhdb.Columns[3].Width = 80;
-            dgridtkhdb.Columns[4].Width = 80;
+            dgridtkhdb.Columns[0].Width = 170;
+            dgridtkhdb.Columns[1].Width = 120;
+            dgridtkhdb.Columns[2].Width = 100;
+            dgridtkhdb.Columns[3].Width = 100;
+            dgridtkhdb.Columns[4].Width = 140;
             dgridtkhdb.AllowUserToAddRows = false;
             dgridtkhdb.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -118,7 +164,7 @@ namespace QLMP.Forms
         private void dgridtkhdb_DoubleClick(object sender, EventArgs e)
         {
             string mahd;
-            if (MessageBox.Show("Bạn có muốn hiển thị thông tin chi tiết?", "Xác nhận",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn hiển thị thông tin chi tiết?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 mahd = dgridtkhdb.CurrentRow.Cells["SoHDB"].Value.ToString();
                 Hoadonban frm = new Hoadonban();
