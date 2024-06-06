@@ -32,10 +32,10 @@ namespace QLMP.Forms
             btnboqua.Size = new Size(90, 30);
 
             DatThuocTinhChoNnut(btnthem, Properties.Resources.add_icon);
-            DatThuocTinhChoNnut(btnxoa, Properties.Resources.huy_icon);
-            DatThuocTinhChoNnut(btnluu, Properties.Resources.luu_icon);
+            DatThuocTinhChoNnut(btnxoa, Properties.Resources.icons8_delete_20);
+            DatThuocTinhChoNnut(btnluu, Properties.Resources.icons8_save_16);
             DatThuocTinhChoNnut(btnsua, Properties.Resources.sua_icon);
-            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.timkiem_icon);
+            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.icons8_search_20);
             DatThuocTinhChoNnut(btnboqua, Properties.Resources.boqua_icon);
             DatThuocTinhChoNnut(btndong, Properties.Resources.dong_icon);
             btnluu.Enabled = false;

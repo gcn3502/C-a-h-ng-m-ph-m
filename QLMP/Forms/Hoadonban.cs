@@ -18,9 +18,11 @@ namespace QLMP.Forms
 {
     public partial class Hoadonban : Form
     {
+       
         public Hoadonban()
         {
             InitializeComponent();
+            
         }
         private bool isInvalidInputShown = false;
         private void Hoadonban_Load(object sender, EventArgs e)
@@ -35,10 +37,10 @@ namespace QLMP.Forms
             btnboqua.Size = new Size(90, 30);
 
             DatThuocTinhChoNnut(btnthem, Properties.Resources.add_icon);
-            DatThuocTinhChoNnut(btnhuy, Properties.Resources.huy_icon);
+            DatThuocTinhChoNnut(btnhuy, Properties.Resources.icons8_delete_20);
             DatThuocTinhChoNnut(btnluu, Properties.Resources.luu_icon);
-            DatThuocTinhChoNnut(btnin, Properties.Resources.in_icon);
-            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.timkiem_icon);
+            DatThuocTinhChoNnut(btnin, Properties.Resources.icons8_print_18);
+            DatThuocTinhChoNnut(btntimkiem, Properties.Resources.icons8_search_20);
             DatThuocTinhChoNnut(btnboqua, Properties.Resources.boqua_icon);
             DatThuocTinhChoNnut(btndong, Properties.Resources.dong_icon);
 
@@ -229,6 +231,7 @@ namespace QLMP.Forms
         }
         private void Load_ThongtinHD()
         {
+            
             string str;
             str = "SELECT NgayBan FROM HDBan WHERE MaHDBan = N'" + txtmahoadon.Text + "'";
             dtngayban.Value = DateTime.Parse(function.GetFieldValues(str));

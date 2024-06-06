@@ -55,8 +55,10 @@
             this.lbltenhang = new System.Windows.Forms.Label();
             this.lblmahang = new System.Windows.Forms.Label();
             this.grpttchung = new System.Windows.Forms.GroupBox();
+            this.dtngayban = new System.Windows.Forms.DateTimePicker();
             this.txtmahoadon = new System.Windows.Forms.TextBox();
             this.cbomanhanvien = new System.Windows.Forms.ComboBox();
+            this.cbomakhachhang = new System.Windows.Forms.ComboBox();
             this.msksdt = new System.Windows.Forms.MaskedTextBox();
             this.txttennhanvien = new System.Windows.Forms.TextBox();
             this.txttenkhachhang = new System.Windows.Forms.TextBox();
@@ -71,8 +73,6 @@
             this.lblmahoadon = new System.Windows.Forms.Label();
             this.lblHDBanHang = new System.Windows.Forms.Label();
             this.grpttmh = new System.Windows.Forms.GroupBox();
-            this.dtngayban = new System.Windows.Forms.DateTimePicker();
-            this.cbomakhachhang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgridhoadonban)).BeginInit();
             this.grpttchung.SuspendLayout();
             this.grpttmh.SuspendLayout();
@@ -213,7 +213,7 @@
             // btnin
             // 
             this.btnin.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnin.Location = new System.Drawing.Point(644, 828);
+            this.btnin.Location = new System.Drawing.Point(645, 828);
             this.btnin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnin.Name = "btnin";
             this.btnin.Size = new System.Drawing.Size(155, 54);
@@ -237,7 +237,7 @@
             // btnhuy
             // 
             this.btnhuy.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhuy.Location = new System.Drawing.Point(453, 828);
+            this.btnhuy.Location = new System.Drawing.Point(439, 828);
             this.btnhuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnhuy.Name = "btnhuy";
             this.btnhuy.Size = new System.Drawing.Size(144, 54);
@@ -249,7 +249,7 @@
             // btnluu
             // 
             this.btnluu.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnluu.Location = new System.Drawing.Point(246, 828);
+            this.btnluu.Location = new System.Drawing.Point(230, 828);
             this.btnluu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(124, 54);
@@ -373,6 +373,15 @@
             this.grpttchung.TabStop = false;
             this.grpttchung.Text = "Thông tin chung";
             // 
+            // dtngayban
+            // 
+            this.dtngayban.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtngayban.Location = new System.Drawing.Point(143, 90);
+            this.dtngayban.Name = "dtngayban";
+            this.dtngayban.Size = new System.Drawing.Size(281, 30);
+            this.dtngayban.TabIndex = 36;
+            this.dtngayban.Value = new System.DateTime(2024, 6, 6, 0, 0, 0, 0);
+            // 
             // txtmahoadon
             // 
             this.txtmahoadon.Location = new System.Drawing.Point(143, 43);
@@ -390,6 +399,16 @@
             this.cbomanhanvien.Size = new System.Drawing.Size(281, 30);
             this.cbomanhanvien.TabIndex = 34;
             this.cbomanhanvien.TextChanged += new System.EventHandler(this.cbomanhanvien_TextChanged);
+            // 
+            // cbomakhachhang
+            // 
+            this.cbomakhachhang.FormattingEnabled = true;
+            this.cbomakhachhang.Location = new System.Drawing.Point(728, 43);
+            this.cbomakhachhang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbomakhachhang.Name = "cbomakhachhang";
+            this.cbomakhachhang.Size = new System.Drawing.Size(313, 30);
+            this.cbomakhachhang.TabIndex = 32;
+            this.cbomakhachhang.TextChanged += new System.EventHandler(this.cbomakhachhang_TextChanged);
             // 
             // msksdt
             // 
@@ -545,25 +564,6 @@
             this.grpttmh.TabIndex = 5;
             this.grpttmh.TabStop = false;
             this.grpttmh.Text = "Thông tin các mặt hàng";
-            // 
-            // dtngayban
-            // 
-            this.dtngayban.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtngayban.Location = new System.Drawing.Point(143, 90);
-            this.dtngayban.Name = "dtngayban";
-            this.dtngayban.Size = new System.Drawing.Size(281, 30);
-            this.dtngayban.TabIndex = 36;
-            this.dtngayban.Value = new System.DateTime(2024, 6, 6, 0, 0, 0, 0);
-            // 
-            // cbomakhachhang
-            // 
-            this.cbomakhachhang.FormattingEnabled = true;
-            this.cbomakhachhang.Location = new System.Drawing.Point(728, 43);
-            this.cbomakhachhang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbomakhachhang.Name = "cbomakhachhang";
-            this.cbomakhachhang.Size = new System.Drawing.Size(313, 30);
-            this.cbomakhachhang.TabIndex = 32;
-            this.cbomakhachhang.TextChanged += new System.EventHandler(this.cbomakhachhang_TextChanged);
             // 
             // Hoadonban
             // 
