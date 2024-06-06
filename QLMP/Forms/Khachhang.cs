@@ -99,7 +99,7 @@ namespace QLMP.Forms
             }
 
             txtmakhach.Text = makh;
-            txttimkiem.Text = "";
+
         }
 
         private void btnluu_Click(object sender, EventArgs e)
@@ -237,6 +237,11 @@ namespace QLMP.Forms
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
+            if (btnthem.Enabled == false)
+            {
+                MessageBox.Show("Bạn đang ở chế độ thêm mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             string sql;
             if (txttimkiem.Text.Trim().Length == 0 || txttimkiem.Text.Trim() == "Nhập từ khoá tìm kiếm...")
             {
@@ -263,7 +268,6 @@ namespace QLMP.Forms
             dgridkhachhang.Columns[1].Width = 150;
             dgridkhachhang.Columns[2].Width = 150;
             dgridkhachhang.Columns[3].Width = 150;
-
         }
 
         private void txttimkiem_Enter(object sender, EventArgs e)
@@ -286,6 +290,12 @@ namespace QLMP.Forms
 
         private void txttimkiem_Click(object sender, EventArgs e)
         {
+            if (btnthem.Enabled == false)
+            {
+                MessageBox.Show("Bạn đang ở chế độ thêm mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txttenkhach.Focus();
+                return;
+            }
             if (txttimkiem.Text == "Nhập từ khoá tìm kiếm...")
             {
                 txttimkiem.Text = "";
@@ -322,6 +332,14 @@ namespace QLMP.Forms
             if (e.KeyCode == Keys.Enter)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void btndongg_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi form Khách hàng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
     }

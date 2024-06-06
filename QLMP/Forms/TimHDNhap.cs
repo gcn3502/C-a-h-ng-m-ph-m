@@ -186,5 +186,14 @@ namespace QLMP.Forms
                 }
             }
         }
+
+        private void btndong_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi form tìm kiếm hoá đơn nhập hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
