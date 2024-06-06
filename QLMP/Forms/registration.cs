@@ -75,7 +75,7 @@ namespace QLMP.Forms
             }
             else
             {
-                SqlConnection con = new SqlConnection("Data Source=LAPTOP-59G1UB6L\\LANANH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False");
+                SqlConnection con = new SqlConnection("Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False");
                 con.Open();
 
                 //check tk đã tồn tại chưa
@@ -101,22 +101,28 @@ namespace QLMP.Forms
 
                 // mã hóa mật khẩu
                 string hashedPassword =  Utils.HashPassword(txt_mk.Text, Encoding.UTF8.GetBytes("salt"));
+
+                con.Close();
                 
 
-                string sql;
-                sql = "INSERT INTO TaiKhoan (MaTK,TenTK,MatKhau) VALUES(@MATK,@Username,@Password)";
+                string sql = "INSERT INTO TaiKhoan (MaTK, TenTK, MatKhau, PhanQuyen) VALUES (@MaTK, @TenTK, @MatKhau, @Role)";
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@Username", txt_tk.Text);
-                cmd.Parameters.AddWithValue("@Password", hashedPassword.ToString());
-                cmd.Parameters.AddWithValue("@MATK", count + 1);
-           //     cmd.Parameters.AddWithValue("@Email", txt_email.Text);
+                con.Open();
+                cmd.Parameters.AddWithValue("@MaTK", count + 1);
+                cmd.Parameters.AddWithValue("@TenTK", txt_tk.Text);
+                cmd.Parameters.AddWithValue("@MatKhau", hashedPassword);
+                cmd.Parameters.AddWithValue("@Role", 1);
+                foreach (SqlParameter param in cmd.Parameters)
+                {
+                    Console.WriteLine($"{param.ParameterName}: {param.Value} (Type: {param.SqlDbType})");
+                }
+                Console.WriteLine("sql string", cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                con.Close();
                 this.Hide();
                 login dnhap = new login();
-                dnhap.ShowDialog();
-                
-                return;
+                dnhap.Show();
             }
         }
 
@@ -126,6 +132,9 @@ namespace QLMP.Forms
             txt_mk.Focus();
        //     txt_email.Focus();
             txt_xacnhan.Focus();
+
+            // fill combobox
+            fillComboxRole();
 
         }
 
@@ -143,9 +152,11 @@ namespace QLMP.Forms
 
         private void fillComboxRole()
         {
+            // seed data
             comboBox1.Items.Add("Quản lý");
-            comboBox1.Items.Add("Nhân viên bán hàng");
             comboBox1.Items.Add("Nhân viên kho");
+            comboBox1.Items.Add("Nhân viên bán hàng");
+            comboBox1.SelectedIndex = 0;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

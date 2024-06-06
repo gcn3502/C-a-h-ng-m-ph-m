@@ -268,7 +268,7 @@ namespace QLMP.Class
                 }
                 hauto = " tỷ";
             } while (ty > 0);
-            return chuoi + " đồng";
+            return chuoi + " nghìn";
         }
 
 
@@ -413,7 +413,7 @@ namespace QLMP.Class
 
             mTemp = mTemp.Trim();
 
-            mTemp = mTemp.Substring(0, 1).ToUpper() + mTemp.Substring(1) + " đồng";
+            mTemp = mTemp.Substring(0, 1).ToUpper() + mTemp.Substring(1) + " nghìn";
             return mTemp;
         }
 

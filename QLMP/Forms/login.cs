@@ -47,6 +47,10 @@ namespace QLMP.Forms
 
             if (dta.Read())
             {
+                User user = User.Instance;
+                user.username = txt_tk.Text;
+                user.password = txt_mk.Text;
+
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                 // Lấy column role từ bảng Tài Khoản một cách an toàn
@@ -54,6 +58,7 @@ namespace QLMP.Forms
                 if (dta["role"] != DBNull.Value)
                 {
                     role = Convert.ToInt32(dta["role"]);
+                    user.role = role.ToString();
                 }
 
                 // Khởi tạo Home form với role

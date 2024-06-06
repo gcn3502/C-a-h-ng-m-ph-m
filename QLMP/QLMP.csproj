@@ -102,6 +102,12 @@
     <Compile Include="Forms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\homme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\homme.Designer.cs">
+      <DependentUpon>homme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Khachhang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\homme.resx">
+      <DependentUpon>homme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Khachhang.resx">
       <DependentUpon>Khachhang.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,7 +266,25 @@
     <Content Include="Resources\avt1.jpg" />
     <None Include="Resources\boqua_icon.png" />
     <None Include="Resources\dong_icon.png" />
+    <None Include="Resources\home %281%29.png" />
+    <None Include="Resources\employee.png" />
+    <None Include="Resources\bill.png" />
+    <None Include="Resources\bill %281%29.png" />
+    <None Include="Resources\flexible.png" />
+    <None Include="Resources\home %282%29.png" />
+    <None Include="Resources\avtmp.jpg" />
+    <None Include="Resources\avtmpp.png" />
+    <None Include="Resources\home %283%29.png" />
+    <None Include="Resources\home %284%29.png" />
+    <None Include="Resources\home %285%29.png" />
+    <None Include="Resources\employee1.png" />
+    <None Include="Resources\bill1.png" />
+    <None Include="Resources\bill %281%291.png" />
+    <None Include="Resources\bill %282%29.png" />
+    <None Include="Resources\bill %283%29.png" />
+    <None Include="Resources\flexible1.png" />
     <Content Include="Resources\home.jpg" />
+    <None Include="Resources\home.png" />
     <Content Include="Resources\home1.jpg" />
     <Content Include="Resources\home2.jpg" />
     <Content Include="Resources\homem.png" />
@@ -282,12 +309,48 @@
     <None Include="Resources\icons8-fix-30.png" />
     <None Include="Resources\icons8-fix-16.png" />
     <None Include="Resources\icons8-close-20 %281%291.png" />
+<<<<<<< HEAD
+    <None Include="Resources\invoice.png" />
+    <None Include="Resources\investment.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\logout %281%29.png" />
+    <None Include="Resources\logout1.png" />
+=======
+    <None Include="Resources\icons8-skip-20.png" />
+    <None Include="Resources\icons8-skip-201.png" />
+    <None Include="Resources\icons8-skip-202.png" />
+>>>>>>> refs/remotes/origin/main
     <Content Include="Resources\menu.jpg" />
     <Content Include="Resources\mypham3.jpg" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\next %281%29.png" />
     <Content Include="Resources\nguon.jpg" />
     <None Include="Resources\timkiem_icon.png" />
     <None Include="Resources\save_icon.png" />
     <None Include="Resources\sua_icon.png" />
+    <None Include="Resources\ql.png" />
+    <None Include="Resources\system.png" />
+    <None Include="Resources\system %282%29.png" />
+    <None Include="Resources\system %283%29.png" />
+    <None Include="Resources\system %284%29.png" />
+    <None Include="Resources\system %285%29.png" />
+    <None Include="Resources\system %286%29.png" />
+    <None Include="Resources\skin-care.png" />
+    <None Include="Resources\team.png" />
+    <None Include="Resources\public-relation.png" />
+    <None Include="Resources\supplier.png" />
+    <None Include="Resources\revenue.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\skin-care1.png" />
+    <None Include="Resources\team1.png" />
+    <None Include="Resources\public-relation1.png" />
+    <None Include="Resources\supplier1.png" />
+    <None Include="Resources\supplier %281%29.png" />
+    <None Include="Resources\revenue1.png" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\tag.png" />
+    <None Include="Resources\system1.png" />
+    <None Include="Resources\sort.png" />
     <Content Include="Resources\tải xuống.jpg" />
     <Content Include="Resources\tải xuống1.jpg" />
   </ItemGroup>
