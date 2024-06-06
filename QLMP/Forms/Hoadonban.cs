@@ -536,7 +536,14 @@ namespace QLMP.Forms
                 ThanhTien();
             }
         }
+        private void txtchietkhau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
+                e.Handled = false;
+            else
+                e.Handled = true;
 
+        }
         private void txtchietkhau_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtchietkhau.Text))
@@ -737,5 +744,6 @@ namespace QLMP.Forms
         {
 
         }
+
     } 
 }
