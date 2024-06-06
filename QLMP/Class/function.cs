@@ -15,7 +15,7 @@ namespace QLMP.Class
     internal class function
     {
         public static SqlConnection Conn;  //Khai báo đối tượng kết nối
-        public static string connString = "Data Source=DESKTOP-1BG474C;Initial Catalog=.net;Integrated Security=True;Encrypt=False";
+        public static string connString = "Data Source=LAPTOP-JR56SAT8\\LINH;Initial Catalog=QLMP;Integrated Security=True;Encrypt=False";
 
         public static void Connect()
         {
@@ -268,7 +268,7 @@ namespace QLMP.Class
                 }
                 hauto = " tỷ";
             } while (ty > 0);
-            return chuoi + " đồng";
+            return chuoi + " nghìn";
         }
 
 
@@ -413,7 +413,7 @@ namespace QLMP.Class
 
             mTemp = mTemp.Trim();
 
-            mTemp = mTemp.Substring(0, 1).ToUpper() + mTemp.Substring(1) + " đồng";
+            mTemp = mTemp.Substring(0, 1).ToUpper() + mTemp.Substring(1) + " nghìn";
             return mTemp;
         }
 

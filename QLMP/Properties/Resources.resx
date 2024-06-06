@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,9 +148,6 @@
   <data name="huy_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hủy_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="luu_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\luu_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="anh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anh1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,9 +157,6 @@
   <data name="tải xuống1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tải xuống11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-save-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-save-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="avt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avt2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,6 +165,9 @@
   </data>
   <data name="timkiem_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timkiem_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-close-20 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-close-20 (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-search-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-search-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,11 +190,17 @@
   <data name="in_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-skip-201" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-skip-201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mypham3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mypham31.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-delete-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-delete-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-close-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-close-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,14 +214,17 @@
   <data name="nguon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nguon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-fix-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-fix-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="luu_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\luu_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-skip-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-skip-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sua_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sua_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-close-20 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-close-20 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-print-18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-print-18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +235,8 @@
   <data name="icons8-add-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-add-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-close-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-close-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-fix-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-fix-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-save-161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-save-161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +247,8 @@
   <data name="icons8-reset-25 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-reset-25 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-close-20 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-close-20 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-save-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-save-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-fix-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-fix-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,7 +256,7 @@
   <data name="dong_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dong_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-close-20 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-close-20 (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-skip-202" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-skip-202.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

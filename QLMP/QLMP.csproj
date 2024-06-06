@@ -282,6 +282,9 @@
     <None Include="Resources\icons8-fix-30.png" />
     <None Include="Resources\icons8-fix-16.png" />
     <None Include="Resources\icons8-close-20 %281%291.png" />
+    <None Include="Resources\icons8-skip-20.png" />
+    <None Include="Resources\icons8-skip-201.png" />
+    <None Include="Resources\icons8-skip-202.png" />
     <Content Include="Resources\menu.jpg" />
     <Content Include="Resources\mypham3.jpg" />
     <Content Include="Resources\nguon.jpg" />
